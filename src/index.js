@@ -1,5 +1,11 @@
 const fs = require("fs");
 const prompt = require("prompt-sync")();
 
-const currentDir = process.cwd();
-const componentsFolder = prompt("Where to put the generated components: ");
+function setGeneratedComponentsDir() {
+  const currentDir = process.cwd();
+  const componentsFolder = prompt(
+    "Where to put the generated components (MUST start without ./ nor /): "
+  );
+
+  return `${currentDir}/${componentsFolder}`;
+}
