@@ -8,6 +8,8 @@ function createComponentsFolders() {
   componentsNames.forEach((componentName) => {
     mkdirSync(`${componentsPath}/${componentName}`);
   });
+
+  return componentsNames;
 }
 
 export default createComponentsFolders;
