@@ -5,7 +5,7 @@ function chooseStyleSheetLanguage() {
     "What StyleSheet Language you're using (e.g., CSS, SCSS, SASS...): "
   );
 
-  return language.toUpperCase();
+  return language.toLowerCase();
 }
 
 export default chooseStyleSheetLanguage;
