@@ -15,5 +15,8 @@
   },
   "dependencies": {
     "prompt-sync": "^4.2.0"
+  },
+  "bin": {
+    "gift-me-components": "bin/index.js"
   }
 }
