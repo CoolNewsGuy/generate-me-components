@@ -3,7 +3,7 @@ import {
   chosenScriptingLanguage,
   chosenStyleSheetLanguage,
   componentsPath,
-} from "../index.js";
+} from "../../bin/index.js";
 
 function createComponentFiles(componentFolderName) {
   const componentFolderPath = `${componentsPath}/${componentFolderName}`;

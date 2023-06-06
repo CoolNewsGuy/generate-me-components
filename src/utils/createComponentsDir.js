@@ -1,5 +1,5 @@
 import { mkdirSync } from "fs";
-import { input } from "../index.js";
+import { input } from "../../bin/index.js";
 
 function createComponentsDir() {
   const chosenDir = setGeneratedComponentsDir();

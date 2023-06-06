@@ -1,4 +1,4 @@
-import { input } from "../index.js";
+import { input } from "../../bin/index.js";
 
 function chooseStyleSheetLanguage() {
   const language = input(
