@@ -1,7 +1,7 @@
 import fs from "fs";
 import create from "prompt-sync";
 
-const input = create();
+export const input = create();
 
 function setComponentsNames() {
   const componentsNames = input(
