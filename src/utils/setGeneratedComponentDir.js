@@ -1,3 +1,5 @@
+import { input } from "../index.js";
+
 function setGeneratedComponentsDir() {
   const currentDir = process.cwd();
   const componentsFolder = input(
