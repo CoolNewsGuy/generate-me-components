@@ -5,6 +5,8 @@ function createComponentsDir() {
   const chosenDir = setGeneratedComponentsDir();
 
   mkdirSync(chosenDir, { recursive: true });
+
+  return chosenDir;
 }
 
 function setGeneratedComponentsDir() {
