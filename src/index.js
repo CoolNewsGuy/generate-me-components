@@ -3,15 +3,6 @@ import create from "prompt-sync";
 
 const prompt = create();
 
-function setGeneratedComponentsDir() {
-  const currentDir = process.cwd();
-  const componentsFolder = prompt(
-    "Where to put the generated components (MUST start without ./ nor /): "
-  );
-
-  return `${currentDir}/${componentsFolder}`;
-}
-
 function setComponentsNames() {
   const componentsNames = prompt(
     "Choose names for your components (put space between each one): "
