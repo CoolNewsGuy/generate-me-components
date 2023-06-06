@@ -1,10 +1,10 @@
 import fs from "fs";
 import create from "prompt-sync";
 
-const prompt = create();
+const input = create();
 
 function setComponentsNames() {
-  const componentsNames = prompt(
+  const componentsNames = input(
     "Choose names for your components (put space between each one): "
   ).split(" ");
 

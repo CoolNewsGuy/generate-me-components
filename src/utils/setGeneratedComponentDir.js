@@ -1,6 +1,6 @@
 function setGeneratedComponentsDir() {
   const currentDir = process.cwd();
-  const componentsFolder = prompt(
+  const componentsFolder = input(
     "Where to put the generated components (MUST start without ./ nor /): "
   );
 
