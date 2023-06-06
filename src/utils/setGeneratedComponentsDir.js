@@ -16,4 +16,4 @@ function setGeneratedComponentsDir() {
   return `${currentDir}/${componentsFolder}`;
 }
 
-export default setGeneratedComponentsDir;
+export default createComponentsDir;
