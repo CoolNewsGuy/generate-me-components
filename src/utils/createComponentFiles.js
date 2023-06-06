@@ -14,7 +14,19 @@ function createComponentFiles(componentFolderName) {
 
   process.chdir(componentFolderPath);
 
-  componentFiles.forEach((file) => writeFileSync(file, ""));
+  componentFiles.forEach((file, index) => {
+    // fill the jsx or tsx file with some boilerplate
+    if (index === 1) {
+      writeFileSync(
+        file,
+        writeToComponentScriptFile(componentFiles, componentFolderName)
+      );
+    }
+    // No boilerplate for styles file
+    else {
+      writeFileSync(file, "");
+    }
+  });
 }
 
 function writeToComponentScriptFile(componentFiles, componentFolderName) {
