@@ -9,3 +9,9 @@ function setGeneratedComponentsDir() {
 
   return `${currentDir}/${componentsFolder}`;
 }
+
+function setComponentsNames() {
+  const componentsNames = prompt(
+    "Choose names for your components (put space between each one): "
+  );
+}
