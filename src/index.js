@@ -1,5 +1,7 @@
-const fs = require("fs");
-const prompt = require("prompt-sync")();
+import fs from "fs";
+import create from "prompt-sync";
+
+const prompt = create();
 
 function setGeneratedComponentsDir() {
   const currentDir = process.cwd();
