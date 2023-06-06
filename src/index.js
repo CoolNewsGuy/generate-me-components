@@ -14,6 +14,10 @@ function setComponentsNames() {
   const componentsNames = prompt(
     "Choose names for your components (put space between each one): "
   ).split(" ");
+
+  const capitalizedComponentsNames = componentsNames.map(capitalize);
+
+  return capitalizedComponentsNames;
 }
 
 function capitalize(word) {
