@@ -1,5 +1,5 @@
 import { mkdirSync } from "fs";
-import setComponentsNames from "../utils/setComponentsNames.js";
+import setComponentsNames from "../setFunctions/setComponentsNames.js";
 import { componentsPath } from "../../bin/index.js";
 
 function createComponentsFolders() {
