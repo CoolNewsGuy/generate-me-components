@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "Unknown Cat",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.2.5"
   },
