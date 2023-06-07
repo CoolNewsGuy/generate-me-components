@@ -1,11 +1,11 @@
 #! /usr/bin/env node
 
 import create from "prompt-sync";
-import createComponentsDir from "../src/utils/createComponentsDir.js";
-import createComponentsFolders from "../src/utils/createComponentsFolders.js";
-import chooseStyleSheetLanguage from "../src/utils/chooseStyleSheetLanguage.js";
-import chooseScriptingLanguage from "../src/utils/chooseScriptingLanguage.js";
-import createComponentFiles from "../src/utils/createComponentFiles.js";
+import createComponentsDir from "../src/createFunctions/createComponentsDir.js";
+import createComponentsFolders from "../src/createFunctions/createComponentsFolders.js";
+import chooseStyleSheetLanguage from "../src/chooseFunctions/chooseStyleSheetLanguage.js";
+import chooseScriptingLanguage from "../src/chooseFunctions/chooseScriptingLanguage.js";
+import createComponentFiles from "../src/createFunctions/createComponentFiles.js";
 
 export const input = create();
 
