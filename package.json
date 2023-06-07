@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["components", "create", "generate", "gift", "me"],
   "author": "The Awesome Guy",
   "license": "MIT",
   "devDependencies": {
