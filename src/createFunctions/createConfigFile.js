@@ -3,7 +3,7 @@ import { input } from "../../bin/index.js";
 
 function createConfigFile() {
   if (shouldCreateConfigFile()) {
-    const fileName = "components.config.js";
+    const fileName = "gift-me-components.json";
 
     writeFileSync(fileName, "");
 
