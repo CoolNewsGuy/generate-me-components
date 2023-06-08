@@ -3,7 +3,7 @@ import {
   chosenScriptingLanguage,
   chosenStyleSheetLanguage,
   componentsPath,
-} from "../../bin/index.js";
+} from "../index.js";
 
 function writeConfigFile() {
   const optionsObj = {

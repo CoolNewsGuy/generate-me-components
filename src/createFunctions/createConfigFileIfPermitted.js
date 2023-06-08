@@ -1,4 +1,4 @@
-import { input, isConfigFileAllowed } from "../../bin/index.js";
+import { input, isConfigFileAllowed } from "../index.js";
 import writeConfigFile from "../writeFunctions/writeConfigFile.js";
 
 function createConfigFileIfPermitted() {

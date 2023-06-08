@@ -1,4 +1,4 @@
-import { input } from "../../bin/index.js";
+import { input } from "../index.js";
 
 function setComponentsNames() {
   const componentsNames = input(

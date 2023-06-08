@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync } from "fs";
 import setComponentsNames from "../setFunctions/setComponentsNames.js";
-import { componentsPath } from "../../bin/index.js";
+import { componentsPath } from "../index.js";
 
 function createComponentsFolders() {
   const componentsNames = setComponentsNames();
