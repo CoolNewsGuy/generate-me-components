@@ -1,7 +1,7 @@
 import { input } from "../../bin/index.js";
 import writeConfigFile from "../writeFunctions/writeConfigFile.js";
 
-function createConfigFile() {
+function createConfigFileIfPermitted() {
   if (shouldCreateConfigFile()) {
     writeConfigFile();
   }
@@ -15,4 +15,4 @@ function shouldCreateConfigFile() {
   return ["Y", "y", "yes", "Yes"].includes(shouldCreateFile);
 }
 
-export default createConfigFile;
+export default createConfigFileIfPermitted;
