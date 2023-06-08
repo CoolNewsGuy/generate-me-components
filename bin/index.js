@@ -14,11 +14,11 @@ export const input = create();
 export const rootDir = process.cwd();
 
 export const componentsPath = createComponentsDir();
-export const componentsFolders = createComponentsFolders();
 export const chosenStyleSheetLanguage = chooseStyleSheetLanguage();
 export const chosenScriptingLanguage = chooseScriptingLanguage();
 export const isConfigFileAllowed = shouldCreateConfigFile();
 
 createConfigFileIfPermitted();
 
+let componentsFolders = createComponentsFolders();
 componentsFolders.forEach(createComponentFiles);
