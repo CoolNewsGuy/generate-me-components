@@ -1,8 +1,8 @@
 import { mkdirSync } from "fs";
-import setGeneratedComponentsDir from "../setFunctions/setGeneratedComponentsDir.js";
+import chooseGeneratedComponentsDir from "../setFunctions/setGeneratedComponentsDir.js";
 
 function createComponentsDir() {
-  const chosenDir = setGeneratedComponentsDir();
+  const chosenDir = chooseGeneratedComponentsDir();
 
   mkdirSync(chosenDir, { recursive: true });
 
