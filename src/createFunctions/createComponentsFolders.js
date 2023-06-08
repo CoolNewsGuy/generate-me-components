@@ -1,5 +1,5 @@
 import { existsSync, mkdirSync } from "fs";
-import chooseComponentsNames from "../setFunctions/chooseComponentsNames.js";
+import chooseComponentsNames from "../chooseFunctions/chooseComponentsNames.js";
 import { componentsPath } from "../index.js";
 
 function createComponentsFolders() {
