@@ -1,4 +1,15 @@
+import { writeFileSync } from "fs";
 import { input } from "../../bin/index.js";
+
+function createConfigFile() {
+  if (shouldCreateConfigFile()) {
+    const fileName = "components.config.js";
+
+    writeFileSync(fileName, "");
+
+    return fileName;
+  }
+}
 
 function shouldCreateConfigFile() {
   const shouldCreateFile = input(
@@ -7,3 +18,5 @@ function shouldCreateConfigFile() {
 
   return ["Y", "y", "yes", "Yes"].includes(shouldCreateFile);
 }
+
+export default createConfigFile;
