@@ -5,7 +5,8 @@ function chooseStyleSheetLanguage() {
   const language = input(
     chalk.cyanBright(
       "What StyleSheet Language you're using (e.g., css, sass, scss, module.css...): "
-    )
+    ),
+    "none"
   );
 
   return language.toLowerCase();
