@@ -1,7 +1,7 @@
 import { input } from "../index.js";
 import chalk from "chalk";
 
-function setComponentsNames() {
+function chooseComponentsNames() {
   const componentsNames = input(
     chalk.cyanBright(
       "Choose names for your components (put space between each one): "
@@ -19,4 +19,4 @@ function capitalize(word) {
   return word;
 }
 
-export default setComponentsNames;
+export default chooseComponentsNames;

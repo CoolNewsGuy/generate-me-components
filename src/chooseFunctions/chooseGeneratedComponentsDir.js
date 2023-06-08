@@ -1,7 +1,7 @@
 import { input } from "../index.js";
 import chalk from "chalk";
 
-function setGeneratedComponentsDir() {
+function chooseGeneratedComponentsDir() {
   const currentDir = process.cwd();
   let componentsFolder = input(
     chalk.cyanBright("Where to put the generated components: ")
@@ -17,4 +17,4 @@ function setGeneratedComponentsDir() {
   return `${currentDir}/${componentsFolder}`;
 }
 
-export default setGeneratedComponentsDir;
+export default chooseGeneratedComponentsDir;

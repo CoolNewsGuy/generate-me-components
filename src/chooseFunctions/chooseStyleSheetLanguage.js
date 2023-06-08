@@ -4,7 +4,7 @@ import chalk from "chalk";
 function chooseStyleSheetLanguage() {
   const language = input(
     chalk.cyanBright(
-      "What StyleSheet Language you're using (e.g., css, sass, scss, module.css...): "
+      "What StyleSheet Language you're using (e.g., css, sass, scss, module.css...) | default = none: "
     ),
     "none"
   );
