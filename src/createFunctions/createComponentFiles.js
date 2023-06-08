@@ -3,6 +3,7 @@ import {
   chosenScriptingLanguage,
   chosenStyleSheetLanguage,
   componentsPath,
+  rootDir,
 } from "../../bin/index.js";
 
 function createComponentFiles(componentFolderName) {
@@ -27,6 +28,8 @@ function createComponentFiles(componentFolderName) {
       writeFileSync(file, "");
     }
   });
+
+  process.chdir(rootDir);
 }
 
 function writeToComponentScriptFile(componentFiles, componentFolderName) {
