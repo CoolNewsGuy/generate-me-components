@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 import create from "prompt-sync";
-import createComponentsFolders from "./createFunctions/createComponentsFolders.js";
+import chooseComponentsNames from "./chooseFunctions/chooseComponentsNames.js";
 import chooseStyleSheetLanguage from "./chooseFunctions/chooseStyleSheetLanguage.js";
 import chooseScriptingLanguage from "./chooseFunctions/chooseScriptingLanguage.js";
 import createComponentFiles from "./createFunctions/createComponentFiles.js";
@@ -14,6 +14,7 @@ import readConfigFile from "./readFunctions/readConfigFile.js";
 import figlet from "figlet";
 import chalk from "chalk";
 import chooseGeneratedComponentsDir from "./chooseFunctions/chooseGeneratedComponentsDir.js";
+import createComponentsFolders from "./createFunctions/createComponentsFolders.js";
 
 console.log(
   chalk.yellow(
@@ -46,5 +47,7 @@ if (existsSync("gift-me-components.json") && checkIfConfigFileIsValid()) {
   createConfigFileIfPermitted();
 }
 
-let componentsFolders = createComponentsFolders();
+export let componentsFolders = chooseComponentsNames();
+
+createComponentsFolders();
 componentsFolders.forEach(createComponentFiles);
