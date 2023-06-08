@@ -1,5 +1,5 @@
 import { mkdirSync } from "fs";
-import chooseGeneratedComponentsDir from "../setFunctions/setGeneratedComponentsDir.js";
+import chooseGeneratedComponentsDir from "../setFunctions/chooseGeneratedComponentsDir.js";
 
 function createComponentsDir() {
   const chosenDir = chooseGeneratedComponentsDir();
