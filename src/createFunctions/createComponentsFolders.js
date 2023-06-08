@@ -1,14 +1,9 @@
-import { existsSync, mkdirSync } from "fs";
-import createComponentsDir from "./createComponentsDir.js";
+import { mkdirSync } from "fs";
 import { componentsFolders, componentsPath } from "../index.js";
 
 function createComponentsFolders() {
-  if (!existsSync(componentsPath)) {
-    createComponentsDir();
-  }
-
   componentsFolders.forEach((componentsFolder) => {
-    mkdirSync(`${componentsPath}/${componentsFolder}`);
+    mkdirSync(`${componentsPath}/${componentsFolder}`, { recursive: true });
   });
 }
 
