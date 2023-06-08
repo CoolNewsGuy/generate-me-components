@@ -13,12 +13,15 @@ import { existsSync } from "fs";
 import checkIfConfigFileIsValid from "./checkFunctions/checkIfConfigFileIsValid.js";
 import readConfigFile from "./readFunctions/readConfigFile.js";
 import figlet from "figlet";
+import chalk from "chalk";
 
 console.log(
-  figlet.textSync("Gift Me Components", {
-    horizontalLayout: "full",
-    verticalLayout: "default",
-  })
+  chalk.yellow(
+    figlet.textSync("Gift Me Components", {
+      horizontalLayout: "full",
+      verticalLayout: "default",
+    })
+  )
 );
 
 export const input = create();

@@ -1,8 +1,12 @@
 import { input } from "../index.js";
+import chalk from "chalk";
 
 function chooseStyleSheetLanguage() {
   const language = input(
-    "What StyleSheet Language you're using (e.g., css, sass, scss, module.css...): "
+    chalk.cyanBright(
+      "What StyleSheet Language you're using (e.g., css, sass, scss, module.css...): "
+    ),
+    "none"
   );
 
   return language.toLowerCase();

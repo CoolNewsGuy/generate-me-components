@@ -1,8 +1,11 @@
 import { input } from "../index.js";
+import chalk from "chalk";
 
 function setComponentsNames() {
   const componentsNames = input(
-    "Choose names for your components (put space between each one): "
+    chalk.cyanBright(
+      "Choose names for your components (put space between each one): "
+    )
   ).split(" ");
 
   const capitalizedComponentsNames = componentsNames.map(capitalize);
