@@ -4,7 +4,7 @@ import {
   chosenStyleSheetLanguage,
   componentsPath,
   rootDir,
-} from "../../bin/index.js";
+} from "../index.js";
 import writeToComponentScriptFile from "../writeFunctions/writeToComponentScriptFile.js";
 
 function createComponentFiles(componentFolderName) {

@@ -7,16 +7,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["components", "create", "generate", "gift", "me"],
+  "keywords": [
+    "components",
+    "create",
+    "generate",
+    "gift",
+    "me"
+  ],
   "author": "The Awesome Guy",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.2.5"
   },
   "dependencies": {
+    "figlet": "^1.6.0",
     "prompt-sync": "^4.2.0"
   },
   "bin": {
-    "gift-me-components": "bin/index.js"
+    "gift-me-components": "./src/index.js"
   }
 }
