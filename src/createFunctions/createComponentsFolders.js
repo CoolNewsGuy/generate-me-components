@@ -1,9 +1,9 @@
 import { existsSync, mkdirSync } from "fs";
-import setComponentsNames from "../setFunctions/setComponentsNames.js";
+import chooseComponentsNames from "../setFunctions/setComponentsNames.js";
 import { componentsPath } from "../index.js";
 
 function createComponentsFolders() {
-  const componentsNames = setComponentsNames();
+  const componentsNames = chooseComponentsNames();
 
   if (!existsSync(componentsPath)) {
     mkdirSync(componentsPath, { recursive: true });
