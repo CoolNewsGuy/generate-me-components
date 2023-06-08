@@ -1,10 +1,5 @@
-import { writeFileSync } from "fs";
-import {
-  chosenScriptingLanguage,
-  chosenStyleSheetLanguage,
-  componentsPath,
-  input,
-} from "../../bin/index.js";
+import { input } from "../../bin/index.js";
+import writeConfigFile from "../writeFunctions/writeConfigFile.js";
 
 function createConfigFile() {
   if (shouldCreateConfigFile()) {
@@ -18,18 +13,6 @@ function shouldCreateConfigFile() {
   );
 
   return ["Y", "y", "yes", "Yes"].includes(shouldCreateFile);
-}
-
-function writeConfigFile() {
-  const optionsObj = {
-    componentsPath: componentsPath,
-    styleSheetLanguage: chosenStyleSheetLanguage,
-    scriptingLanguage: chosenScriptingLanguage,
-  };
-
-  const optionsObjToJSON = JSON.stringify(optionsObj, null, 2);
-
-  writeFileSync("gift-me-components.json", optionsObjToJSON);
 }
 
 export default createConfigFile;
