@@ -15,4 +15,5 @@ function shouldCreateConfigFile() {
   return ["Y", "y", "yes", "Yes"].includes(shouldCreateFile);
 }
 
+export { shouldCreateConfigFile };
 export default createConfigFileIfPermitted;
