@@ -8,6 +8,7 @@ import chooseScriptingLanguage from "../src/chooseFunctions/chooseScriptingLangu
 import createComponentFiles from "../src/createFunctions/createComponentFiles.js";
 
 export const input = create();
+export const rootDir = process.cwd();
 
 export const componentsPath = createComponentsDir();
 export const componentsFolders = createComponentsFolders();
