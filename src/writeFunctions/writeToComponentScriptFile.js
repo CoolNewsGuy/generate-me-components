@@ -1,7 +1,12 @@
-function writeToComponentScriptFile(componentFiles, componentFolderName) {
-  const boilerplate = `import './${componentFiles[0]}'
+import { chosenStyleSheetLanguage } from "../index.js";
 
-function ${componentFolderName}() {
+function writeToComponentScriptFile(componentFiles, componentFolderName) {
+  // don't ask how that works but it just works ^^
+  const boilerplate = `${
+    chosenStyleSheetLanguage !== "none"
+      ? `import "./${componentFiles[0]}" \n \n`
+      : ""
+  }function ${componentFolderName}() {
   return (
     <></>
   )
