@@ -25,7 +25,7 @@ function createComponentFiles(componentFolderName) {
       );
     }
     // No boilerplate for styles file
-    else {
+    else if (chosenStyleSheetLanguage !== "none") {
       writeFileSync(file, "");
     }
   });
