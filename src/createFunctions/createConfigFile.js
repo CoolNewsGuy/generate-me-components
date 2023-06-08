@@ -1,13 +1,14 @@
 import { writeFileSync } from "fs";
-import { input } from "../../bin/index.js";
+import {
+  chosenScriptingLanguage,
+  chosenStyleSheetLanguage,
+  componentsPath,
+  input,
+} from "../../bin/index.js";
 
 function createConfigFile() {
   if (shouldCreateConfigFile()) {
-    const fileName = "gift-me-components.json";
-
-    writeFileSync(fileName, "");
-
-    return fileName;
+    writeConfigFile();
   }
 }
 
@@ -17,6 +18,18 @@ function shouldCreateConfigFile() {
   );
 
   return ["Y", "y", "yes", "Yes"].includes(shouldCreateFile);
+}
+
+function writeConfigFile() {
+  const optionsObj = {
+    componentsPath: componentsPath,
+    styleSheetLanguage: chosenStyleSheetLanguage,
+    scriptingLanguage: chosenScriptingLanguage,
+  };
+
+  const optionsObjToJSON = JSON.stringify(optionsObj, null, 2);
+
+  writeFileSync("gift-me-components.json", optionsObjToJSON);
 }
 
 export default createConfigFile;
