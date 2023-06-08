@@ -1,5 +1,6 @@
 import { input, isConfigFileAllowed } from "../index.js";
 import writeConfigFile from "../writeFunctions/writeConfigFile.js";
+import chalk from "chalk";
 
 function createConfigFileIfPermitted() {
   if (isConfigFileAllowed) {
@@ -9,7 +10,9 @@ function createConfigFileIfPermitted() {
 
 function shouldCreateConfigFile() {
   const shouldCreateFile = input(
-    "Would you like to create a config file to quickly create components? (Y/n): "
+    chalk.cyanBright(
+      "Would you like to create a config file to quickly create components? (Y/n): "
+    )
   );
 
   return ["Y", "y", "yes", "Yes"].includes(shouldCreateFile);
