@@ -12,6 +12,14 @@ import createConfigFileIfPermitted, {
 import { existsSync } from "fs";
 import checkIfConfigFileIsValid from "../src/checkFunctions/checkIfConfigFileIsValid.js";
 import readConfigFile from "../src/readFunctions/readConfigFile.js";
+import figlet from "figlet";
+
+console.log(
+  figlet.textSync("Gift Me Components", {
+    horizontalLayout: "full",
+    verticalLayout: "default",
+  })
+);
 
 export const input = create();
 export const rootDir = process.cwd();
