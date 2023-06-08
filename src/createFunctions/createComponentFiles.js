@@ -5,6 +5,7 @@ import {
   componentsPath,
   rootDir,
 } from "../../bin/index.js";
+import writeToComponentScriptFile from "../writeFunctions/writeToComponentScriptFile.js";
 
 function createComponentFiles(componentFolderName) {
   const componentFolderPath = `${componentsPath}/${componentFolderName}`;
@@ -30,21 +31,6 @@ function createComponentFiles(componentFolderName) {
   });
 
   process.chdir(rootDir);
-}
-
-function writeToComponentScriptFile(componentFiles, componentFolderName) {
-  const boilerplate = `import './${componentFiles[0]}'
-
-function ${componentFolderName}() {
-  return (
-    <></>
-  )
-}
-      
-export default ${componentFolderName};
-`;
-
-  return boilerplate;
 }
 
 export default createComponentFiles;
