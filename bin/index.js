@@ -9,16 +9,31 @@ import createComponentFiles from "../src/createFunctions/createComponentFiles.js
 import createConfigFileIfPermitted, {
   shouldCreateConfigFile,
 } from "../src/createFunctions/createConfigFileIfPermitted.js";
+import { existsSync } from "fs";
+import checkIfConfigFileIsValid from "../src/checkFunctions/checkIfConfigFileIsValid.js";
+import readConfigFile from "../src/readFunctions/readConfigFile.js";
 
 export const input = create();
 export const rootDir = process.cwd();
 
-export const componentsPath = createComponentsDir();
-export const chosenStyleSheetLanguage = chooseStyleSheetLanguage();
-export const chosenScriptingLanguage = chooseScriptingLanguage();
-export const isConfigFileAllowed = shouldCreateConfigFile();
+export let componentsPath = null;
+export let chosenStyleSheetLanguage = null;
+export let chosenScriptingLanguage = null;
+export let isConfigFileAllowed = null;
 
-createConfigFileIfPermitted();
+if (existsSync("gift-me-components.json") && checkIfConfigFileIsValid()) {
+  const configFile = readConfigFile();
+  componentsPath = configFile.componentsPath;
+  chosenStyleSheetLanguage = configFile.styleSheetLanguage;
+  chosenScriptingLanguage = configFile.scriptingLanguage;
+} else {
+  componentsPath = createComponentsDir();
+  chosenStyleSheetLanguage = chooseStyleSheetLanguage();
+  chosenScriptingLanguage = chooseScriptingLanguage();
+  isConfigFileAllowed = shouldCreateConfigFile();
+
+  createConfigFileIfPermitted();
+}
 
 let componentsFolders = createComponentsFolders();
 componentsFolders.forEach(createComponentFiles);
