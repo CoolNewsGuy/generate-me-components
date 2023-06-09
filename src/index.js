@@ -5,9 +5,7 @@ import chooseComponentsNames from "./chooseFunctions/chooseComponentsNames.js";
 import chooseStyleSheetLanguage from "./chooseFunctions/chooseStyleSheetLanguage.js";
 import chooseScriptingLanguage from "./chooseFunctions/chooseScriptingLanguage.js";
 import createComponentFiles from "./createFunctions/createComponentFiles.js";
-import createConfigFileIfPermitted, {
-  shouldCreateConfigFile,
-} from "./createFunctions/createConfigFileIfPermitted.js";
+import createConfigFileIfPermitted from "./createFunctions/createConfigFileIfPermitted.js";
 import { existsSync } from "fs";
 import checkIfConfigFileIsValid from "./checkFunctions/checkIfConfigFileIsValid.js";
 import readConfigFile from "./readFunctions/readConfigFile.js";
@@ -15,6 +13,7 @@ import figlet from "figlet";
 import chalk from "chalk";
 import chooseGeneratedComponentsDir from "./chooseFunctions/chooseGeneratedComponentsDir.js";
 import createComponentsFolders from "./createFunctions/createComponentsFolders.js";
+import shouldCreateConfigFile from "./shouldFunctions/shouldCreateConfigFile.js";
 
 console.log(
   chalk.yellow(
