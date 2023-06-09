@@ -1,5 +1,6 @@
 import { writeFileSync } from "fs";
 import {
+  additionalFilesExtensions,
   chosenScriptingLanguage,
   chosenStyleSheetLanguage,
   componentsPath,
@@ -14,6 +15,7 @@ function writeConfigFile() {
     scriptingLanguage: chosenScriptingLanguage,
     useArrowFunctionComponents: doesUserPreferArrowFunctionComponents,
     shouldCreateAdditionalFiles: doesUserWantAdditionalFiles,
+    additionalFileExtensions: additionalFilesExtensions,
   };
 
   const optionsObjToJSON = JSON.stringify(optionsObj, null, 2);
