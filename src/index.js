@@ -16,6 +16,7 @@ import createComponentsFolders from "./createFunctions/createComponentsFolders.j
 import shouldCreateConfigFile from "./shouldFunctions/shouldCreateConfigFile.js";
 import shouldUseArrowFunctions from "./shouldFunctions/shouldUseArrowFunctions.js";
 import shouldCreateAdditionalFiles from "./shouldFunctions/shouldCreateAdditionalFiles.js";
+import chooseAdditionalFilesExtensions from "./chooseFunctions/chooseAdditionalFilesExtensions.js";
 
 console.log(
   chalk.yellow(
@@ -35,6 +36,7 @@ export let chosenScriptingLanguage = null;
 export let isConfigFileAllowed = null;
 export let doesUserPreferArrowFunctionComponents = null;
 export let doesUserWantAdditionalFiles = null;
+export let additionalFilesExtensions = null;
 
 if (existsSync("gift-me-components.json") && checkIfConfigFileIsValid()) {
   const configFile = readConfigFile();
@@ -50,6 +52,10 @@ if (existsSync("gift-me-components.json") && checkIfConfigFileIsValid()) {
   isConfigFileAllowed = shouldCreateConfigFile();
   doesUserPreferArrowFunctionComponents = shouldUseArrowFunctions();
   doesUserWantAdditionalFiles = shouldCreateAdditionalFiles();
+
+  if (doesUserWantAdditionalFiles) {
+    additionalFilesExtensions = chooseAdditionalFilesExtensions();
+  }
 
   createConfigFileIfPermitted();
 }
