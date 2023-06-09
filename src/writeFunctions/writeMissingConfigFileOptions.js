@@ -25,7 +25,10 @@ function writeMissingConfigFileOptions() {
     }
   }
 
-  writeFileSync("gift-me-components.json", configFileContentObj);
+  writeFileSync(
+    "gift-me-components.json",
+    JSON.stringify(configFileContentObj, null, 2)
+  );
 }
 
 export default writeMissingConfigFileOptions;
