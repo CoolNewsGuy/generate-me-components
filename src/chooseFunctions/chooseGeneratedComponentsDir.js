@@ -4,7 +4,10 @@ import chalk from "chalk";
 function chooseGeneratedComponentsDir() {
   const currentDir = process.cwd();
   let componentsFolder = input(
-    chalk.cyanBright("Where to put the generated components: ")
+    chalk.cyanBright(
+      "Where to put the generated components | default = src/components: "
+    ),
+    "src/components"
   );
 
   if (componentsFolder.startsWith("/")) {
