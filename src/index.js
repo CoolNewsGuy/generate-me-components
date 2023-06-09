@@ -29,6 +29,7 @@ console.log(
 
 export const input = create();
 export const rootDir = process.cwd();
+export const colorizeText = chalk.green;
 
 export let componentsPath = null;
 export let chosenStyleSheetLanguage = null;
