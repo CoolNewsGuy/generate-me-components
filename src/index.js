@@ -50,13 +50,14 @@ if (existsSync("gift-me-components.json") && checkIfConfigFileIsValid()) {
   componentsPath = chooseGeneratedComponentsDir();
   chosenStyleSheetLanguage = chooseStyleSheetLanguage();
   chosenScriptingLanguage = chooseScriptingLanguage();
-  isConfigFileAllowed = shouldCreateConfigFile();
   doesUserPreferArrowFunctionComponents = shouldUseArrowFunctions();
   doesUserWantAdditionalFiles = shouldCreateAdditionalFiles();
 
   if (doesUserWantAdditionalFiles) {
     additionalFilesExtensions = chooseAdditionalFilesExtensions();
   }
+
+  isConfigFileAllowed = shouldCreateConfigFile();
 
   createConfigFileIfPermitted();
 }
