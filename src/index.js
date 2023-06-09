@@ -36,7 +36,7 @@ export let chosenScriptingLanguage = null;
 export let isConfigFileAllowed = null;
 export let doesUserPreferArrowFunctionComponents = null;
 export let doesUserWantAdditionalFiles = null;
-export let additionalFilesExtensions = null;
+export let additionalFilesExtensions = "none";
 
 if (existsSync("gift-me-components.json") && checkIfConfigFileIsValid()) {
   const configFile = readConfigFile();
