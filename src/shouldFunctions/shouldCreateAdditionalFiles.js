@@ -1,9 +1,8 @@
-import { input } from "../index.js";
-import chalk from "chalk";
+import { colorizeText, input } from "../index.js";
 
 function shouldCreateAdditionalFiles() {
   const shouldIncludeAdditionalFiles = input(
-    chalk.cyanBright(
+    colorizeText(
       "Would you like to include additional component files (y/n) | default = no: "
     ),
     "no"

@@ -1,9 +1,8 @@
-import { input } from "../index.js";
-import chalk from "chalk";
+import { colorizeText, input } from "../index.js";
 
 function chooseScriptingLanguage() {
   const language = input(
-    chalk.cyanBright(
+    colorizeText(
       "What Scripting Language you're using (JSX and TSX only) | default = JSX: "
     ),
     "JSX"

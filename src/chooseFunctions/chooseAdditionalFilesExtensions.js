@@ -1,9 +1,8 @@
-import { input } from "../index.js";
-import chalk from "chalk";
+import { colorizeText, input } from "../index.js";
 
 function chooseAdditionalFilesExtensions() {
   const additionalFilesExtensions = input(
-    chalk.cyanBright(
+    colorizeText(
       "Specifiy additional files extensions (e.g., test.js...) | default = none: "
     ),
     "none"
