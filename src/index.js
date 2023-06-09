@@ -34,10 +34,10 @@ export const colorizeText = chalk.green;
 export let componentsPath = null;
 export let chosenStyleSheetLanguage = null;
 export let chosenScriptingLanguage = null;
-export let isConfigFileAllowed = null;
 export let doesUserPreferArrowFunctionComponents = null;
 export let doesUserWantAdditionalFiles = null;
 export let additionalFilesExtensions = "none";
+export let isConfigFileAllowed = null;
 
 if (existsSync("gift-me-components.json") && checkIfConfigFileIsValid()) {
   const configFile = readConfigFile();
