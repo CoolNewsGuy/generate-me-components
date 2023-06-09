@@ -11,10 +11,11 @@ import writeToComponentScriptFile from "../writeFunctions/writeToComponentScript
 
 function createComponentFiles(componentFolderName) {
   const componentFolderPath = `${componentsPath}/${componentFolderName}`;
-  const componentFiles = [
-    `${componentFolderName}.${chosenStyleSheetLanguage}`,
-    `${componentFolderName}.${chosenScriptingLanguage}`,
-  ];
+  const componentFiles = [`${componentFolderName}.${chosenScriptingLanguage}`];
+
+  if (chosenStyleSheetLanguage !== "none") {
+    componentFiles.push(`${componentFolderName}.${chosenStyleSheetLanguage}`);
+  }
 
   if (additionalFilesExtensions !== "none" && doesUserWantAdditionalFiles) {
     for (const fileExtension of additionalFilesExtensions) {
@@ -32,7 +33,7 @@ function createComponentFiles(componentFolderName) {
         writeToComponentScriptFile(componentFiles, componentFolderName)
       );
     }
-    // No boilerplate for styles file
+    // No boilerplate for other files
     else {
       writeFileSync(file, "");
     }
