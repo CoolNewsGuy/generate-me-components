@@ -14,6 +14,7 @@ import chalk from "chalk";
 import chooseGeneratedComponentsDir from "./chooseFunctions/chooseGeneratedComponentsDir.js";
 import createComponentsFolders from "./createFunctions/createComponentsFolders.js";
 import shouldCreateConfigFile from "./shouldFunctions/shouldCreateConfigFile.js";
+import shouldUseArrowFunctions from "./shouldFunctions/shouldUseArrowFunctions.js";
 
 console.log(
   chalk.yellow(
@@ -31,6 +32,7 @@ export let componentsPath = null;
 export let chosenStyleSheetLanguage = null;
 export let chosenScriptingLanguage = null;
 export let isConfigFileAllowed = null;
+export let doesUserPreferArrowFunctionComponents = null;
 
 if (existsSync("gift-me-components.json") && checkIfConfigFileIsValid()) {
   const configFile = readConfigFile();
@@ -42,6 +44,7 @@ if (existsSync("gift-me-components.json") && checkIfConfigFileIsValid()) {
   chosenStyleSheetLanguage = chooseStyleSheetLanguage();
   chosenScriptingLanguage = chooseScriptingLanguage();
   isConfigFileAllowed = shouldCreateConfigFile();
+  doesUserPreferArrowFunctionComponents = shouldUseArrowFunctions();
 
   createConfigFileIfPermitted();
 }
