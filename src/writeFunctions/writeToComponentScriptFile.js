@@ -14,12 +14,12 @@ function writeToComponentScriptFile(componentFiles, componentFolderName) {
         ? `import "./${componentFiles[0]}" \n \n`
         : ""
     }const ${componentFolderName} = () => {
-    return (
-      <></>
-    )
-  }
+  return (
+    <></>
+  )
+}
         
-  export default ${componentFolderName};
+export default ${componentFolderName};
   `;
   } else {
     boilerplate = `${
@@ -27,12 +27,12 @@ function writeToComponentScriptFile(componentFiles, componentFolderName) {
         ? `import "./${componentFiles[0]}" \n \n`
         : ""
     }function ${componentFolderName}() {
-    return (
-      <></>
-    )
-  }
+  return (
+    <></>
+  )
+}
         
-  export default ${componentFolderName};
+export default ${componentFolderName};
   `;
   }
 
