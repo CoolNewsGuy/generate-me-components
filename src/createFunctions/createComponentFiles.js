@@ -1,8 +1,10 @@
 import { writeFileSync } from "fs";
 import {
+  additionalFilesExtensions,
   chosenScriptingLanguage,
   chosenStyleSheetLanguage,
   componentsPath,
+  doesUserWantAdditionalFiles,
   rootDir,
 } from "../index.js";
 import writeToComponentScriptFile from "../writeFunctions/writeToComponentScriptFile.js";
@@ -13,6 +15,12 @@ function createComponentFiles(componentFolderName) {
     `${componentFolderName}.${chosenStyleSheetLanguage}`,
     `${componentFolderName}.${chosenScriptingLanguage}`,
   ];
+
+  if (additionalFilesExtensions !== "none" && doesUserWantAdditionalFiles) {
+    for (const fileExtension of additionalFilesExtensions) {
+      componentFiles.push(`${componentFolderName}.${fileExtension}`);
+    }
+  }
 
   process.chdir(componentFolderPath);
 
@@ -25,7 +33,7 @@ function createComponentFiles(componentFolderName) {
       );
     }
     // No boilerplate for styles file
-    else if (chosenStyleSheetLanguage !== "none") {
+    else {
       writeFileSync(file, "");
     }
   });
