@@ -6,6 +6,9 @@ function checkIfConfigFileIsValid() {
     "componentsPath",
     "styleSheetLanguage",
     "scriptingLanguage",
+    "useArrowFunctionComponents",
+    "shouldCreateAdditionalFiles",
+    "additionalFileExtensions",
   ];
 
   for (const requiredProp of requiredProps) {
