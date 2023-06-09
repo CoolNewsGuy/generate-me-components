@@ -4,7 +4,7 @@ import chalk from "chalk";
 function shouldCreateAdditionalFiles() {
   const shouldIncludeAdditionalFiles = input(
     chalk.cyanBright(
-      "Would you like to include additional components files (y/n) | default = no:"
+      "Would you like to include additional component files (y/n) | default = no: "
     ),
     "no"
   );
