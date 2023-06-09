@@ -41,6 +41,7 @@ if (existsSync("gift-me-components.json") && checkIfConfigFileIsValid()) {
   componentsPath = configFile.componentsPath;
   chosenStyleSheetLanguage = configFile.styleSheetLanguage;
   chosenScriptingLanguage = configFile.scriptingLanguage;
+  doesUserPreferArrowFunctionComponents = configFile.useArrowFunctionComponents;
 } else {
   componentsPath = chooseGeneratedComponentsDir();
   chosenStyleSheetLanguage = chooseStyleSheetLanguage();
