@@ -1,6 +1,6 @@
 import readConfigFile from "../readFunctions/readConfigFile.js";
 
-function checkIfConfigFileIsValid() {
+function checkIfConfigFileIsComplete() {
   const fileContentObj = readConfigFile();
   const requiredProps = [
     "componentsPath",
@@ -20,4 +20,4 @@ function checkIfConfigFileIsValid() {
   return true;
 }
 
-export default checkIfConfigFileIsValid;
+export default checkIfConfigFileIsComplete;

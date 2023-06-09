@@ -7,7 +7,7 @@ import chooseScriptingLanguage from "./chooseFunctions/chooseScriptingLanguage.j
 import createComponentFiles from "./createFunctions/createComponentFiles.js";
 import createConfigFileIfPermitted from "./createFunctions/createConfigFileIfPermitted.js";
 import { existsSync } from "fs";
-import checkIfConfigFileIsValid from "./checkFunctions/checkIfConfigFileIsValid.js";
+import checkIfConfigFileIsComplete from "./checkFunctions/checkIfConfigFileIsComplete.js";
 import readConfigFile from "./readFunctions/readConfigFile.js";
 import figlet from "figlet";
 import chalk from "chalk";
@@ -39,7 +39,7 @@ export let doesUserWantAdditionalFiles = null;
 export let additionalFilesExtensions = "none";
 export let isConfigFileAllowed = null;
 
-if (existsSync("gift-me-components.json") && checkIfConfigFileIsValid()) {
+if (existsSync("gift-me-components.json") && checkIfConfigFileIsComplete()) {
   const configFile = readConfigFile();
   componentsPath = configFile.componentsPath;
   chosenStyleSheetLanguage = configFile.styleSheetLanguage;
