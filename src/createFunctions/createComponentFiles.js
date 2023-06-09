@@ -27,7 +27,7 @@ function createComponentFiles(componentFolderName) {
 
   componentFiles.forEach((file, index) => {
     // fill the jsx or tsx file with some boilerplate
-    if (index === 1) {
+    if (index === 0) {
       writeFileSync(
         file,
         writeToComponentScriptFile(componentFiles, componentFolderName)
