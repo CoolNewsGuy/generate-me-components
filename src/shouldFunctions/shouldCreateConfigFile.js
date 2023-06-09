@@ -9,7 +9,7 @@ function shouldCreateConfigFile() {
     "yes"
   );
 
-  return ["Y", "y", "yes", "Yes"].includes(shouldCreateFile);
+  return ["y", "yes"].includes(shouldCreateFile.toLowerCase());
 }
 
 export default shouldCreateConfigFile;
