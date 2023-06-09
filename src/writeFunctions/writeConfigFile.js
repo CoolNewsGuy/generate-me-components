@@ -3,6 +3,7 @@ import {
   chosenScriptingLanguage,
   chosenStyleSheetLanguage,
   componentsPath,
+  doesUserPreferArrowFunctionComponents,
 } from "../index.js";
 
 function writeConfigFile() {
@@ -10,6 +11,7 @@ function writeConfigFile() {
     componentsPath: componentsPath,
     styleSheetLanguage: chosenStyleSheetLanguage,
     scriptingLanguage: chosenScriptingLanguage,
+    useArrowFunctionComponents: doesUserPreferArrowFunctionComponents,
   };
 
   const optionsObjToJSON = JSON.stringify(optionsObj, null, 2);
