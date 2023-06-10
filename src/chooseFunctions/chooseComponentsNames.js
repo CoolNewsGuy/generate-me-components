@@ -5,8 +5,9 @@ function chooseComponentsNames() {
     colorizeText(
       "Choose names for your components (put space between each one): "
     )
-  ).split(" ");
-
+  )
+    .trim()
+    .split(" ");
   const capitalizedComponentsNames = componentsNames.map(capitalize);
 
   return capitalizedComponentsNames;

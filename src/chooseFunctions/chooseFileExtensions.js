@@ -7,7 +7,7 @@ function chooseFileExtensions() {
       "Specifiy files extensions (e.g., .vue, test.js...) | default = none: "
     ),
     "none"
-  );
+  ).trim();
 
   if (filesExtensions === "none") {
     return "none";

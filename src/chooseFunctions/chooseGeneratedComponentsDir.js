@@ -7,7 +7,7 @@ function chooseGeneratedComponentsDir() {
       "Where to put the generated components | default = src/components: "
     ),
     "src/components"
-  );
+  ).trim();
 
   if (componentsFolder.startsWith("/")) {
     componentsFolder = componentsFolder.slice(1);

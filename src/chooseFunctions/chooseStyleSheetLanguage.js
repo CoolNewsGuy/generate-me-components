@@ -6,7 +6,7 @@ function chooseStyleSheetLanguage() {
       "What StyleSheet Language you're using (e.g., css, sass, scss, module.css...) | default = none: "
     ),
     "none"
-  );
+  ).trim();
 
   return language.toLowerCase();
 }

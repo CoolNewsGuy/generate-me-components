@@ -6,7 +6,7 @@ function chooseAdditionalFilesExtensions() {
       "Specifiy additional files extensions (e.g., test.js...) | default = none: "
     ),
     "none"
-  );
+  ).trim();
 
   if (additionalFilesExtensions === "none") {
     return "none";

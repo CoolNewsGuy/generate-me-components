@@ -6,7 +6,7 @@ function shouldUseArrowFunctions() {
       "Would you like to use arrow function components (y/n) default = no: "
     ),
     "no"
-  );
+  ).trim();
 
   return ["y", "yes"].includes(shouldUseArrowSyntax.toLowerCase());
 }

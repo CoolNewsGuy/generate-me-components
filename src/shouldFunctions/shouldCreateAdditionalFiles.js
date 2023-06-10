@@ -6,7 +6,7 @@ function shouldCreateAdditionalFiles() {
       "Would you like to include additional component files (y/n) | default = no: "
     ),
     "no"
-  );
+  ).trim();
 
   return ["y", "yes"].includes(shouldIncludeAdditionalFiles.toLowerCase());
 }

@@ -6,7 +6,7 @@ function chooseScriptingLanguage() {
       "What Scripting Language you're using (JSX and TSX only) | default = JSX: "
     ),
     "JSX"
-  );
+  ).trim();
 
   return language.toLowerCase();
 }

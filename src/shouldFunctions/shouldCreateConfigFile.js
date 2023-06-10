@@ -6,7 +6,7 @@ function shouldCreateConfigFile() {
       "Would you like to create a config file to quickly create components? (y/n) | default = yes: "
     ),
     "yes"
-  );
+  ).trim();
 
   return ["y", "yes"].includes(shouldCreateFile.toLowerCase());
 }
