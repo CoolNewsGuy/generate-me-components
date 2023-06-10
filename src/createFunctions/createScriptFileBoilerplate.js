@@ -11,7 +11,7 @@ function createScriptFileBoilerplate(componentFiles, componentFolderName) {
   if (doesUserPreferArrowFunctionComponents) {
     boilerplate = `${
       chosenStyleSheetLanguage !== "none"
-        ? `import "./${componentFiles[0]}" \n \n`
+        ? `import "./${componentFiles[1]}" \n \n`
         : ""
     }const ${componentFolderName} = () => {
   return (
@@ -24,7 +24,7 @@ export default ${componentFolderName};
   } else {
     boilerplate = `${
       chosenStyleSheetLanguage !== "none"
-        ? `import "./${componentFiles[0]}" \n \n`
+        ? `import "./${componentFiles[1]}" \n \n`
         : ""
     }function ${componentFolderName}() {
   return (
