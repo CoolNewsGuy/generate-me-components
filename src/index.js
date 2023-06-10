@@ -23,7 +23,7 @@ import chooseFileExtensions from "./chooseFunctions/chooseFileExtensions.js";
 
 console.log(
   chalk.yellow(
-    figlet.textSync("Gift Me Components", {
+    figlet.textSync("Generate Me Components", {
       horizontalLayout: "full",
       verticalLayout: "default",
     })
