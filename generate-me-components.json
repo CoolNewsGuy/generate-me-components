@@ -1,9 +1,0 @@
-{
-  "componentsPath": "/home/aymen/Desktop/Generate me components/src/components",
-  "framework": "react",
-  "styleSheetLanguage": "css",
-  "scriptingLanguage": "jsx",
-  "useArrowFunctionComponents": false,
-  "shouldCreateAdditionalFiles": false,
-  "additionalFileExtensions": "none"
-}
