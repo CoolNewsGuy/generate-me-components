@@ -33,7 +33,7 @@ function writeConfigFile() {
 
   const optionsObjToJSON = JSON.stringify(optionsObj, null, 2);
 
-  writeFileSync("gift-me-components.json", optionsObjToJSON);
+  writeFileSync("generate-me-components.json", optionsObjToJSON);
 }
 
 export default writeConfigFile;
