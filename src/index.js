@@ -40,6 +40,7 @@ export let chosenScriptingLanguage = null;
 export let doesUserPreferArrowFunctionComponents = null;
 export let doesUserWantAdditionalFiles = null;
 export let additionalFilesExtensions = "none";
+export let fileExtensions = null; // for frameworks other than React
 export let isConfigFileAllowed = null;
 
 function setOptionsFromConfigFile() {
@@ -63,9 +64,6 @@ if (existsSync("gift-me-components.json") && checkIfConfigFileIsComplete()) {
 } else {
   componentsPath = chooseGeneratedComponentsDir();
   chosenFramework = chooseFramework();
-  chosenStyleSheetLanguage = chooseStyleSheetLanguage();
-  chosenScriptingLanguage = chooseScriptingLanguage();
-  doesUserPreferArrowFunctionComponents = shouldUseArrowFunctions();
   doesUserWantAdditionalFiles = shouldCreateAdditionalFiles();
 
   if (doesUserWantAdditionalFiles) {
