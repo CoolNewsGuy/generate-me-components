@@ -40,7 +40,7 @@ function writeMissingConfigFileOptions() {
   }
 
   writeFileSync(
-    "gift-me-components.json",
+    "generate-me-components.json",
     JSON.stringify(configFileContentObj, null, 2)
   );
 }
