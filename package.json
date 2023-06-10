@@ -14,7 +14,8 @@
     "react",
     "vue",
     "svelte",
-    "js"
+    "js",
+    "me"
   ],
   "author": "The Awesome Guy",
   "license": "MIT",
