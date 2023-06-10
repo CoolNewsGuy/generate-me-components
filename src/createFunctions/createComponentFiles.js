@@ -7,7 +7,7 @@ import {
   doesUserWantAdditionalFiles,
   rootDir,
 } from "../index.js";
-import writeToComponentScriptFile from "../writeFunctions/writeToComponentScriptFile.js";
+import createScriptFileBoilerplate from "../writeFunctions/writeToComponentScriptFile.js";
 
 function createComponentFiles(componentFolderName) {
   const componentFolderPath = `${componentsPath}/${componentFolderName}`;
@@ -30,7 +30,7 @@ function createComponentFiles(componentFolderName) {
     if (index === 0) {
       writeFileSync(
         file,
-        writeToComponentScriptFile(componentFiles, componentFolderName)
+        createScriptFileBoilerplate(componentFiles, componentFolderName)
       );
     }
     // No boilerplate for other files

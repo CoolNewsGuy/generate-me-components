@@ -3,7 +3,7 @@ import {
   doesUserPreferArrowFunctionComponents,
 } from "../index.js";
 
-function writeToComponentScriptFile(componentFiles, componentFolderName) {
+function createScriptFileBoilerplate(componentFiles, componentFolderName) {
   // don't ask how that works but it just works ^^
   let boilerplate;
 
@@ -39,4 +39,4 @@ export default ${componentFolderName};
   return boilerplate;
 }
 
-export default writeToComponentScriptFile;
+export default createScriptFileBoilerplate;
