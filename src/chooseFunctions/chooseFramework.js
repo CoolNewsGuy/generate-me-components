@@ -6,7 +6,7 @@ function chooseFramework() {
     "React"
   );
 
-  return framework;
+  return framework.toLowerCase();
 }
 
 export default chooseFramework;
