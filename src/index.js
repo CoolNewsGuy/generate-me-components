@@ -43,7 +43,10 @@ export let isConfigFileAllowed = null;
 
 if (existsSync("gift-me-components.json") && checkIfConfigFileIsComplete()) {
   setOptionsFromConfigFile();
-} else if (!checkIfConfigFileIsComplete()) {
+} else if (
+  existsSync("gift-me-components.json") &&
+  !checkIfConfigFileIsComplete()
+) {
   writeMissingConfigFileOptions();
   setOptionsFromConfigFile();
 } else {
