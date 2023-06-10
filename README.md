@@ -43,7 +43,7 @@ For example: if you enter: vue ts js, it will create 3 files with the same name 
 
 After this, it will ask you if you want to create a config file so that you don't have to answer these questions the next time.
 
-The file name is gift-me-components.json.
+The file name is generate-me-components.json.
 
 **NOTE: if you delete an option in the generated config file, it will ask you the corresponding question for that deleted option next time you run the command.**
 
