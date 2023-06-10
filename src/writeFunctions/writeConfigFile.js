@@ -1,6 +1,7 @@
 import { writeFileSync } from "fs";
 import {
   additionalFilesExtensions,
+  chosenFramework,
   chosenScriptingLanguage,
   chosenStyleSheetLanguage,
   componentsPath,
@@ -11,6 +12,7 @@ import {
 function writeConfigFile() {
   const optionsObj = {
     componentsPath: componentsPath,
+    framework: chosenFramework,
     styleSheetLanguage: chosenStyleSheetLanguage,
     scriptingLanguage: chosenScriptingLanguage,
     useArrowFunctionComponents: doesUserPreferArrowFunctionComponents,
