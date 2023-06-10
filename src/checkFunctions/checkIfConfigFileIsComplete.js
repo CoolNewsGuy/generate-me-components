@@ -2,10 +2,10 @@ import readConfigFile from "../readFunctions/readConfigFile.js";
 
 function checkIfConfigFileIsComplete() {
   const fileContentObj = readConfigFile();
-  const requiredProps = ["componentsPath", "framework"];
+  const requiredOptions = ["componentsPath", "framework"];
 
   if (fileContentObj.framework === "react") {
-    requiredProps.push(
+    requiredOptions.push(
       "styleSheetLanguage",
       "scriptingLanguage",
       "useArrowFunctionComponents",
@@ -13,11 +13,11 @@ function checkIfConfigFileIsComplete() {
       "additionalFileExtensions"
     );
   } else {
-    requiredProps.push("fileExtensions");
+    requiredOptions.push("fileExtensions");
   }
 
-  for (const requiredProp of requiredProps) {
-    if (!(requiredProp in fileContentObj)) {
+  for (const option of requiredOptions) {
+    if (!(option in fileContentObj)) {
       return false;
     }
   }
