@@ -18,6 +18,7 @@ import shouldUseArrowFunctions from "./shouldFunctions/shouldUseArrowFunctions.j
 import shouldCreateAdditionalFiles from "./shouldFunctions/shouldCreateAdditionalFiles.js";
 import chooseAdditionalFilesExtensions from "./chooseFunctions/chooseAdditionalFilesExtensions.js";
 import writeMissingConfigFileOptions from "./writeFunctions/writeMissingConfigFileOptions.js";
+import chooseFramework from "./chooseFunctions/chooseFramework.js";
 
 console.log(
   chalk.yellow(
@@ -33,6 +34,7 @@ export const rootDir = process.cwd();
 export const colorizeText = chalk.green;
 
 export let componentsPath = null;
+export let chosenFramework = null;
 export let chosenStyleSheetLanguage = null;
 export let chosenScriptingLanguage = null;
 export let doesUserPreferArrowFunctionComponents = null;
@@ -60,6 +62,7 @@ if (existsSync("gift-me-components.json") && checkIfConfigFileIsComplete()) {
   setOptionsFromConfigFile();
 } else {
   componentsPath = chooseGeneratedComponentsDir();
+  chosenFramework = chooseFramework();
   chosenStyleSheetLanguage = chooseStyleSheetLanguage();
   chosenScriptingLanguage = chooseScriptingLanguage();
   doesUserPreferArrowFunctionComponents = shouldUseArrowFunctions();
