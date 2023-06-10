@@ -47,11 +47,18 @@ export let isConfigFileAllowed = null;
 function setOptionsFromConfigFile() {
   const configFile = readConfigFile();
   componentsPath = configFile.componentsPath;
-  chosenStyleSheetLanguage = configFile.styleSheetLanguage;
-  chosenScriptingLanguage = configFile.scriptingLanguage;
-  doesUserPreferArrowFunctionComponents = configFile.useArrowFunctionComponents;
-  doesUserWantAdditionalFiles = configFile.shouldCreateAdditionalFiles;
-  additionalFilesExtensions = configFile.additionalFileExtensions;
+  chosenFramework = configFile.framework;
+
+  if (chosenFramework === "react") {
+    chosenStyleSheetLanguage = configFile.styleSheetLanguage;
+    chosenScriptingLanguage = configFile.scriptingLanguage;
+    doesUserPreferArrowFunctionComponents =
+      configFile.useArrowFunctionComponents;
+    doesUserWantAdditionalFiles = configFile.shouldCreateAdditionalFiles;
+    additionalFilesExtensions = configFile.additionalFileExtensions;
+  } else {
+    fileExtensions = configFile.fileExtensions;
+  }
 }
 
 function askQuestionsForReactDevelopers() {
