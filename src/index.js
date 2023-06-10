@@ -53,6 +53,17 @@ function setOptionsFromConfigFile() {
   additionalFilesExtensions = configFile.additionalFileExtensions;
 }
 
+function askQuestionsForReactDevelopers() {
+  chosenStyleSheetLanguage = chooseStyleSheetLanguage();
+  chosenScriptingLanguage = chooseScriptingLanguage();
+  doesUserPreferArrowFunctionComponents = shouldUseArrowFunctions();
+  doesUserWantAdditionalFiles = shouldCreateAdditionalFiles();
+
+  if (doesUserWantAdditionalFiles) {
+    additionalFilesExtensions = chooseAdditionalFilesExtensions();
+  }
+}
+
 if (existsSync("gift-me-components.json") && checkIfConfigFileIsComplete()) {
   setOptionsFromConfigFile();
 } else if (
@@ -64,10 +75,9 @@ if (existsSync("gift-me-components.json") && checkIfConfigFileIsComplete()) {
 } else {
   componentsPath = chooseGeneratedComponentsDir();
   chosenFramework = chooseFramework();
-  doesUserWantAdditionalFiles = shouldCreateAdditionalFiles();
 
-  if (doesUserWantAdditionalFiles) {
-    additionalFilesExtensions = chooseAdditionalFilesExtensions();
+  if (chosenFramework === "react") {
+    askQuestionsForReactDevelopers();
   }
 
   isConfigFileAllowed = shouldCreateConfigFile();
