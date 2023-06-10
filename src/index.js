@@ -19,6 +19,7 @@ import shouldCreateAdditionalFiles from "./shouldFunctions/shouldCreateAdditiona
 import chooseAdditionalFilesExtensions from "./chooseFunctions/chooseAdditionalFilesExtensions.js";
 import writeMissingConfigFileOptions from "./writeFunctions/writeMissingConfigFileOptions.js";
 import chooseFramework from "./chooseFunctions/chooseFramework.js";
+import chooseFileExtensions from "./chooseFunctions/chooseFileExtensions.js";
 
 console.log(
   chalk.yellow(
@@ -78,6 +79,8 @@ if (existsSync("gift-me-components.json") && checkIfConfigFileIsComplete()) {
 
   if (chosenFramework === "react") {
     askQuestionsForReactDevelopers();
+  } else {
+    fileExtensions = chooseFileExtensions();
   }
 
   isConfigFileAllowed = shouldCreateConfigFile();
