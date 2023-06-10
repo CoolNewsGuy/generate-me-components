@@ -1,8 +1,8 @@
-import { input } from "../index.js";
+import { colorizeText, input } from "../index.js";
 
 function chooseFramework() {
   const framework = input(
-    "Choose your js framework | default = React: ",
+    colorizeText("Choose your js framework | default = React: "),
     "React"
   );
 
