@@ -1,25 +1,37 @@
 import { writeFileSync } from "fs";
 import {
   additionalFilesExtensions,
+  chosenFramework,
   chosenScriptingLanguage,
   chosenStyleSheetLanguage,
   componentsPath,
   doesUserWantAdditionalFiles,
+  fileExtensions,
   rootDir,
 } from "../index.js";
 import createScriptFileBoilerplate from "./createScriptFileBoilerplate.js";
 
 function createComponentFiles(componentFolderName) {
   const componentFolderPath = `${componentsPath}/${componentFolderName}`;
-  const componentFiles = [`${componentFolderName}.${chosenScriptingLanguage}`];
+  const componentFiles = [];
 
-  if (chosenStyleSheetLanguage !== "none") {
-    componentFiles.push(`${componentFolderName}.${chosenStyleSheetLanguage}`);
-  }
+  if (chosenFramework === "react") {
+    componentFiles.push(`${componentFolderName}.${chosenScriptingLanguage}`);
 
-  if (additionalFilesExtensions !== "none" && doesUserWantAdditionalFiles) {
-    for (const fileExtension of additionalFilesExtensions) {
-      componentFiles.push(`${componentFolderName}.${fileExtension}`);
+    if (chosenStyleSheetLanguage !== "none") {
+      componentFiles.push(`${componentFolderName}.${chosenStyleSheetLanguage}`);
+    }
+
+    if (additionalFilesExtensions !== "none" && doesUserWantAdditionalFiles) {
+      for (const fileExtension of additionalFilesExtensions) {
+        componentFiles.push(`${componentFolderName}.${fileExtension}`);
+      }
+    }
+  } else {
+    if (fileExtensions !== "none") {
+      for (const fileExtension of fileExtensions) {
+        componentFiles.push(`${componentFolderName}.${fileExtension}`);
+      }
     }
   }
 
@@ -27,7 +39,7 @@ function createComponentFiles(componentFolderName) {
 
   componentFiles.forEach((file, index) => {
     // fill the jsx or tsx file with some boilerplate
-    if (index === 0) {
+    if (index === 0 && chosenFramework === "react") {
       writeFileSync(
         file,
         createScriptFileBoilerplate(componentFiles, componentFolderName)
