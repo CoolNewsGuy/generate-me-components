@@ -1,5 +1,5 @@
 {
-  "name": "gift-me-components",
+  "name": "generate-me-components",
   "version": "1.0.0",
   "description": "A library to create multiple components quickly",
   "main": "./src/index.js",
@@ -11,8 +11,10 @@
     "components",
     "create",
     "generate",
-    "gift",
-    "me"
+    "react",
+    "vue",
+    "svelte",
+    "js"
   ],
   "author": "The Awesome Guy",
   "license": "MIT",

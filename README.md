@@ -1,4 +1,4 @@
-# Gift Me Components
+# Generate Me Components
 
 A simple library for creating js component(s) quickly! :fire:
 
