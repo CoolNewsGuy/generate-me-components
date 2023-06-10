@@ -24,7 +24,7 @@ This command will ask you the following questions:
 Then if you're using React, it will ask you:
 
 1. The used StyleSheet language (CSS, SASS, Stylus...).
-2. The used Scripting lanuage (JSX, TSX).
+2. The used Scripting language (JSX, TSX).
 3. If arrow function components are preferred.
 4. If you want to include additional files.
 5. additional files' extension (e.g., test.js...).
