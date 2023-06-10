@@ -45,4 +45,6 @@ The file name is gift-me-components.json.
 
 If you find a bug or want to suggest a new feature, create a [new issue](https://github.com/MrLuckyCat/gift-me-components/issues).
 
-if you like the library, give a star to that repo to support me!
+if you like the library, give a star to that repo to support me and buy me a pizza if you can!
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://ko-fi.com/mrluckycat)
