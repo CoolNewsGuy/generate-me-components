@@ -7,18 +7,29 @@ import {
   componentsPath,
   doesUserPreferArrowFunctionComponents,
   doesUserWantAdditionalFiles,
+  fileExtensions,
 } from "../index.js";
 
 function writeConfigFile() {
-  const optionsObj = {
-    componentsPath: componentsPath,
-    framework: chosenFramework,
-    styleSheetLanguage: chosenStyleSheetLanguage,
-    scriptingLanguage: chosenScriptingLanguage,
-    useArrowFunctionComponents: doesUserPreferArrowFunctionComponents,
-    shouldCreateAdditionalFiles: doesUserWantAdditionalFiles,
-    additionalFileExtensions: additionalFilesExtensions,
-  };
+  let optionsObj;
+
+  if (chosenFramework === "react") {
+    optionsObj = {
+      componentsPath: componentsPath,
+      framework: chosenFramework,
+      styleSheetLanguage: chosenStyleSheetLanguage,
+      scriptingLanguage: chosenScriptingLanguage,
+      useArrowFunctionComponents: doesUserPreferArrowFunctionComponents,
+      shouldCreateAdditionalFiles: doesUserWantAdditionalFiles,
+      additionalFileExtensions: additionalFilesExtensions,
+    };
+  } else {
+    optionsObj = {
+      componentsPath: componentsPath,
+      framework: chosenFramework,
+      fileExtensions: fileExtensions,
+    };
+  }
 
   const optionsObjToJSON = JSON.stringify(optionsObj, null, 2);
 
