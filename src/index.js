@@ -17,6 +17,7 @@ import shouldCreateConfigFile from "./shouldFunctions/shouldCreateConfigFile.js"
 import shouldUseArrowFunctions from "./shouldFunctions/shouldUseArrowFunctions.js";
 import shouldCreateAdditionalFiles from "./shouldFunctions/shouldCreateAdditionalFiles.js";
 import chooseAdditionalFilesExtensions from "./chooseFunctions/chooseAdditionalFilesExtensions.js";
+import writeMissingConfigFileOptions from "./writeFunctions/writeMissingConfigFileOptions.js";
 
 console.log(
   chalk.yellow(
@@ -40,6 +41,16 @@ export let additionalFilesExtensions = "none";
 export let isConfigFileAllowed = null;
 
 if (existsSync("gift-me-components.json") && checkIfConfigFileIsComplete()) {
+  const configFile = readConfigFile();
+  componentsPath = configFile.componentsPath;
+  chosenStyleSheetLanguage = configFile.styleSheetLanguage;
+  chosenScriptingLanguage = configFile.scriptingLanguage;
+  doesUserPreferArrowFunctionComponents = configFile.useArrowFunctionComponents;
+  doesUserWantAdditionalFiles = configFile.shouldCreateAdditionalFiles;
+  additionalFilesExtensions = configFile.additionalFileExtensions;
+} else if (!checkIfConfigFileIsComplete()) {
+  // TODO: commit it tomorrow (it works!)
+  writeMissingConfigFileOptions();
   const configFile = readConfigFile();
   componentsPath = configFile.componentsPath;
   chosenStyleSheetLanguage = configFile.styleSheetLanguage;
