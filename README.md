@@ -1,6 +1,6 @@
 # Gift Me Components
 
-A simple library for creating js component(s) quickly!
+A simple library for creating js component(s) quickly! :fire:
 
 ## Installation
 
@@ -33,8 +33,9 @@ Otherwise, it will just ask you:
 
 - Extensions of Component's files (e.g., vue, svelte...).
 
-After this:
-it will ask you if you want to create a config file so that you don't have to answer these questions the next time.
+For example: if you enter: vue ts js, it will create 3 files with the same name but different file extensions.
+
+After this, it will ask you if you want to create a config file so that you don't have to answer these questions the next time.
 
 The file name is gift-me-components.json.
 
@@ -43,3 +44,5 @@ The file name is gift-me-components.json.
 ## Issues
 
 If you find a bug or want to suggest a new feature, create a [new issue](https://github.com/MrLuckyCat/gift-me-components/issues).
+
+if you like the library, give a star to that repo to support me!
