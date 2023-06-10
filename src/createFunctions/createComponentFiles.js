@@ -7,7 +7,7 @@ import {
   doesUserWantAdditionalFiles,
   rootDir,
 } from "../index.js";
-import createScriptFileBoilerplate from "../writeFunctions/writeToComponentScriptFile.js";
+import createScriptFileBoilerplate from "./createScriptFileBoilerplate.js";
 
 function createComponentFiles(componentFolderName) {
   const componentFolderPath = `${componentsPath}/${componentFolderName}`;
