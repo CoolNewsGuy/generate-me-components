@@ -32,7 +32,7 @@ console.log(
 
 export const input = create();
 export const rootDir = process.cwd();
-export const colorizeText = chalk.green;
+export const colorizeText = chalk.rgb(0, 255, 255);
 
 export let componentsPath = null;
 export let chosenFramework = null;
