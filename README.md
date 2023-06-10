@@ -5,13 +5,19 @@ A simple library for creating js component(s) quickly! :fire:
 ## Installation
 
 ```bash
-npm i -D gift-me-components
+npm i -D generate-me-components
 ```
 
 ## Usage
 
 ```bash
-npx gift-me-components 
+npx generate-me-components 
+```
+
+OR:
+
+```bash
+npx gmc
 ```
 
 This command will ask you the following questions:
