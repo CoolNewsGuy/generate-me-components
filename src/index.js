@@ -72,10 +72,13 @@ function askQuestionsForReactDevelopers() {
   }
 }
 
-if (existsSync("gift-me-components.json") && checkIfConfigFileIsComplete()) {
+if (
+  existsSync("generate-me-components.json") &&
+  checkIfConfigFileIsComplete()
+) {
   setOptionsFromConfigFile();
 } else if (
-  existsSync("gift-me-components.json") &&
+  existsSync("generate-me-components.json") &&
   !checkIfConfigFileIsComplete()
 ) {
   writeMissingConfigFileOptions();
