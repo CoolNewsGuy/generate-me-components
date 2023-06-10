@@ -6,18 +6,32 @@ import chooseStyleSheetLanguage from "../chooseFunctions/chooseStyleSheetLanguag
 import readConfigFile from "../readFunctions/readConfigFile.js";
 import shouldCreateAdditionalFiles from "../shouldFunctions/shouldCreateAdditionalFiles.js";
 import shouldUseArrowFunctions from "../shouldFunctions/shouldUseArrowFunctions.js";
+import chooseFramework from "../chooseFunctions/chooseFramework.js";
+import { chosenFramework } from "../index.js";
+import chooseFileExtensions from "../chooseFunctions/chooseFileExtensions.js";
 
 function writeMissingConfigFileOptions() {
   const configFileContentObj = readConfigFile();
 
-  const requiredOptions = {
-    componentsPath: chooseGeneratedComponentsDir,
-    styleSheetLanguage: chooseStyleSheetLanguage,
-    scriptingLanguage: chooseScriptingLanguage,
-    useArrowFunctionComponents: shouldUseArrowFunctions,
-    shouldCreateAdditionalFiles: shouldCreateAdditionalFiles,
-    additionalFileExtensions: chooseAdditionalFilesExtensions,
-  };
+  let requiredOptions;
+
+  if (chosenFramework === "react") {
+    requiredOptions = {
+      componentsPath: chooseGeneratedComponentsDir,
+      framework: chooseFramework,
+      styleSheetLanguage: chooseStyleSheetLanguage,
+      scriptingLanguage: chooseScriptingLanguage,
+      useArrowFunctionComponents: shouldUseArrowFunctions,
+      shouldCreateAdditionalFiles: shouldCreateAdditionalFiles,
+      additionalFileExtensions: chooseAdditionalFilesExtensions,
+    };
+  } else {
+    requiredOptions = {
+      componentsPath: chooseGeneratedComponentsDir,
+      framework: chooseFramework,
+      fileExtensions: chooseFileExtensions,
+    };
+  }
 
   for (const option in requiredOptions) {
     if (!(option in configFileContentObj)) {
