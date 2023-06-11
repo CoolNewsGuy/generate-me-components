@@ -1,4 +1,5 @@
 import { colorizeText, input } from "../index.js";
+import capitalize from "../utils/capitalize.js";
 
 function chooseComponentsNames() {
   const componentsNames = input(
@@ -11,12 +12,6 @@ function chooseComponentsNames() {
   const capitalizedComponentsNames = componentsNames.map(capitalize);
 
   return capitalizedComponentsNames;
-}
-
-function capitalize(word) {
-  word = word.charAt(0).toUpperCase() + word.slice(1);
-
-  return word;
 }
 
 export default chooseComponentsNames;
