@@ -47,7 +47,7 @@ export let isConfigFileAllowed = null;
 function setOptionsFromConfigFile() {
   const configFile = readConfigFile();
   componentsPath = configFile.componentsPath;
-  doesUserUsesJsxFiles = configFile.areJsxFilesUsed; // ! TODO: add areJsxFilesUsed in config file
+  doesUserUsesJsxFiles = configFile.areJsxFilesUsed;
 
   if (doesUserUsesJsxFiles) {
     chosenStyleSheetLanguage = configFile.styleSheetLanguage;
