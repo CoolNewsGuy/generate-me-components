@@ -1,11 +1,11 @@
 import { writeFileSync } from "fs";
 import {
   additionalFilesExtensions,
-  chosenFramework,
   chosenScriptingLanguage,
   chosenStyleSheetLanguage,
   componentsPath,
   doesUserPreferArrowFunctionComponents,
+  doesUserUsesJsxFiles,
   doesUserWantAdditionalFiles,
   fileExtensions,
 } from "../index.js";
@@ -13,10 +13,10 @@ import {
 function writeConfigFile() {
   let optionsObj;
 
-  if (chosenFramework === "react") {
+  if (doesUserUsesJsxFiles) {
     optionsObj = {
       componentsPath: componentsPath,
-      framework: chosenFramework,
+      areJsxFilesUsed: doesUserUsesJsxFiles,
       styleSheetLanguage: chosenStyleSheetLanguage,
       scriptingLanguage: chosenScriptingLanguage,
       useArrowFunctionComponents: doesUserPreferArrowFunctionComponents,
@@ -26,7 +26,7 @@ function writeConfigFile() {
   } else {
     optionsObj = {
       componentsPath: componentsPath,
-      framework: chosenFramework,
+      areJsxFilesUsed: doesUserUsesJsxFiles,
       fileExtensions: fileExtensions,
     };
   }
