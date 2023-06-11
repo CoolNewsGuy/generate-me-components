@@ -11,13 +11,21 @@ npm i -D generate-me-components
 ## Usage
 
 ```bash
-npx generate-me-components 
+npx generate-me-components [your-components-names]
 ```
 
 OR:
 
 ```bash
-npx gmc
+npx gmc [your-components-names]
+```
+
+**NOTE: if you don't specifiy components' names, you will be asked later. Also, components names are *case-insensitive*.**
+
+Example:
+
+```bash
+npx gmc couter1 counter2
 ```
 
 This command will ask you the following questions:
@@ -31,11 +39,13 @@ Then if you're using JSX/TSX file extensions, it will ask you:
 2. The used Scripting language (JSX, TSX).
 3. If arrow function components are preferred.
 4. If you want to include additional files.
-5. additional files' extension (e.g., test.js...).
+5. Additional files' extension (e.g., test.js...).
+6. Components' Names (if not specified in CLI arguments).
 
 Otherwise, it will just ask you:
 
-- Extensions of Component's files (e.g., vue, svelte...).
+1. Extensions of Component's files (e.g., vue, svelte...).
+2. Components' Names (if not specified in CLI arguments).
 
 For example: if you enter: vue ts js, it will create 3 files with the same name but different file extensions.
 
