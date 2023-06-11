@@ -11,11 +11,14 @@
     "components",
     "create",
     "generate",
+    "framework",
+    "library",
     "react",
     "vue",
     "svelte",
     "js",
-    "me"
+    "me",
+    "npm"
   ],
   "author": "The Awesome Guy",
   "license": "MIT",
