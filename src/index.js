@@ -20,6 +20,7 @@ import chooseAdditionalFilesExtensions from "./chooseFunctions/chooseAdditionalF
 import writeMissingConfigFileOptions from "./writeFunctions/writeMissingConfigFileOptions.js";
 import chooseFileExtensions from "./chooseFunctions/chooseFileExtensions.js";
 import checkIfJsxFilesAreUsed from "./checkFunctions/checkIfJsxFilesAreUsed.js";
+import capitalize from "./utils/capitalize.js";
 
 console.log(
   chalk.yellow(
@@ -43,6 +44,7 @@ export let doesUserWantAdditionalFiles = null;
 export let additionalFilesExtensions = "none";
 export let fileExtensions = null; // for frameworks other than React
 export let isConfigFileAllowed = null;
+export let componentsFolders = null;
 
 function setOptionsFromConfigFile() {
   const configFile = readConfigFile();
@@ -98,7 +100,11 @@ if (
   createConfigFileIfPermitted();
 }
 
-export let componentsFolders = chooseComponentsNames();
+if (process.argv.length > 2) {
+  componentsFolders = process.argv.slice(2).map(capitalize);
+} else {
+  componentsFolders = chooseComponentsNames();
+}
 
 createComponentsFolders();
 componentsFolders.forEach(createComponentFiles);
