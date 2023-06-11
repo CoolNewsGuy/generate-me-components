@@ -1,10 +1,10 @@
 import { writeFileSync } from "fs";
 import {
   additionalFilesExtensions,
-  chosenFramework,
   chosenScriptingLanguage,
   chosenStyleSheetLanguage,
   componentsPath,
+  doesUserUsesJsxFiles,
   doesUserWantAdditionalFiles,
   fileExtensions,
   rootDir,
@@ -15,7 +15,7 @@ function createComponentFiles(componentFolderName) {
   const componentFolderPath = `${componentsPath}/${componentFolderName}`;
   const componentFiles = [];
 
-  if (chosenFramework === "react") {
+  if (doesUserUsesJsxFiles) {
     componentFiles.push(`${componentFolderName}.${chosenScriptingLanguage}`);
 
     if (chosenStyleSheetLanguage !== "none") {
@@ -39,7 +39,7 @@ function createComponentFiles(componentFolderName) {
 
   componentFiles.forEach((file, index) => {
     // fill the jsx or tsx file with some boilerplate
-    if (index === 0 && chosenFramework === "react") {
+    if (index === 0 && doesUserUsesJsxFiles) {
       writeFileSync(
         file,
         createScriptFileBoilerplate(componentFiles, componentFolderName)
