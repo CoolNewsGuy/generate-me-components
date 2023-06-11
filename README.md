@@ -1,6 +1,6 @@
 # Generate Me Components
 
-A simple library for creating js component(s) quickly! :fire:
+A simple library for creating js component(s) folder quickly with as many files as you want! :fire:
 
 ## Installation
 
