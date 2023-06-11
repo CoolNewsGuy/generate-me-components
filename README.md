@@ -23,11 +23,9 @@ npx gmc
 This command will ask you the following questions:
 
 1. Components Path (if it does not exist, it will be created automatically).
-2. Your JavaScript framework.
+2. If you're using JSX/TSX file extensions.
 
-**NOTE: if you're using a library/framework that uses JSX/TSX files, just choose React as a framework. The reason is that it will fill the JSX/TSX with simple boilerplate.**
-
-Then if you're using React, it will ask you:
+Then if you're using JSX/TSX file extensions, it will ask you:
 
 1. The used StyleSheet language (CSS, SASS, Stylus...).
 2. The used Scripting language (JSX, TSX).
@@ -51,6 +49,6 @@ The file name is generate-me-components.json.
 
 If you find a bug or want to suggest a new feature, create a [new issue](https://github.com/MrLuckyCat/gift-me-components/issues).
 
-if you like the library, give a star to that repo to support me and buy me a pizza if you can!
+if you like the library, give a star to that repo to support me and buy me a coffee if you can!
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://ko-fi.com/mrluckycat)
