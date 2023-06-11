@@ -6,26 +6,26 @@ import chooseStyleSheetLanguage from "../chooseFunctions/chooseStyleSheetLanguag
 import readConfigFile from "../readFunctions/readConfigFile.js";
 import shouldCreateAdditionalFiles from "../shouldFunctions/shouldCreateAdditionalFiles.js";
 import shouldUseArrowFunctions from "../shouldFunctions/shouldUseArrowFunctions.js";
-import chooseFramework from "../chooseFunctions/chooseFramework.js";
 import chooseFileExtensions from "../chooseFunctions/chooseFileExtensions.js";
+import checkIfJsxFilesAreUsed from "../checkFunctions/checkIfJsxFilesAreUsed.js";
 
 function writeMissingConfigFileOptions() {
   const configFileContentObj = readConfigFile();
 
   let requiredOptions;
 
-  let chosenFramework;
+  let doesUserUsesJsxFiles;
 
-  if ("framework" in configFileContentObj) {
-    chosenFramework = configFileContentObj.framework;
+  if ("areJsxFilesUsed" in configFileContentObj) {
+    doesUserUsesJsxFiles = configFileContentObj.areJsxFilesUsed;
   } else {
-    chosenFramework = chooseFramework();
+    doesUserUsesJsxFiles = checkIfJsxFilesAreUsed();
   }
 
-  if (chosenFramework.toLowerCase() === "react") {
+  if (doesUserUsesJsxFiles) {
     requiredOptions = {
       componentsPath: chooseGeneratedComponentsDir,
-      framework: chosenFramework,
+      areJsxFilesUsed: doesUserUsesJsxFiles,
       styleSheetLanguage: chooseStyleSheetLanguage,
       scriptingLanguage: chooseScriptingLanguage,
       useArrowFunctionComponents: shouldUseArrowFunctions,
@@ -35,14 +35,14 @@ function writeMissingConfigFileOptions() {
   } else {
     requiredOptions = {
       componentsPath: chooseGeneratedComponentsDir,
-      framework: chosenFramework,
+      areJsxFilesUsed: doesUserUsesJsxFiles,
       fileExtensions: chooseFileExtensions,
     };
   }
 
   for (const option in requiredOptions) {
     if (!(option in configFileContentObj)) {
-      if (option === "framework") {
+      if (option === "areJsxFilesUsed") {
         configFileContentObj[option] = requiredOptions[option];
       } else {
         configFileContentObj[option] = requiredOptions[option]();
