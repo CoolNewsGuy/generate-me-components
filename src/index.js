@@ -18,8 +18,8 @@ import shouldUseArrowFunctions from "./shouldFunctions/shouldUseArrowFunctions.j
 import shouldCreateAdditionalFiles from "./shouldFunctions/shouldCreateAdditionalFiles.js";
 import chooseAdditionalFilesExtensions from "./chooseFunctions/chooseAdditionalFilesExtensions.js";
 import writeMissingConfigFileOptions from "./writeFunctions/writeMissingConfigFileOptions.js";
-import chooseFramework from "./chooseFunctions/chooseFramework.js";
 import chooseFileExtensions from "./chooseFunctions/chooseFileExtensions.js";
+import checkIfJsxFilesAreUsed from "./checkFunctions/checkIfJsxFilesAreUsed.js";
 
 console.log(
   chalk.yellow(
@@ -35,7 +35,7 @@ export const rootDir = process.cwd();
 export const colorizeText = chalk.rgb(0, 255, 255);
 
 export let componentsPath = null;
-export let chosenFramework = null;
+export let doesUserUsesJsxFiles = null;
 export let chosenStyleSheetLanguage = null;
 export let chosenScriptingLanguage = null;
 export let doesUserPreferArrowFunctionComponents = null;
@@ -47,9 +47,9 @@ export let isConfigFileAllowed = null;
 function setOptionsFromConfigFile() {
   const configFile = readConfigFile();
   componentsPath = configFile.componentsPath;
-  chosenFramework = configFile.framework;
+  doesUserUsesJsxFiles = configFile.areJsxFilesUsed; // ! TODO: add areJsxFilesUsed in config file
 
-  if (chosenFramework === "react") {
+  if (doesUserUsesJsxFiles) {
     chosenStyleSheetLanguage = configFile.styleSheetLanguage;
     chosenScriptingLanguage = configFile.scriptingLanguage;
     doesUserPreferArrowFunctionComponents =
@@ -85,9 +85,9 @@ if (
   setOptionsFromConfigFile();
 } else {
   componentsPath = chooseGeneratedComponentsDir();
-  chosenFramework = chooseFramework();
+  doesUserUsesJsxFiles = checkIfJsxFilesAreUsed();
 
-  if (chosenFramework === "react") {
+  if (doesUserUsesJsxFiles) {
     askQuestionsForReactDevelopers();
   } else {
     fileExtensions = chooseFileExtensions();
