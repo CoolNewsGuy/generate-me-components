@@ -7,7 +7,6 @@ import readConfigFile from "../readFunctions/readConfigFile.js";
 import shouldCreateAdditionalFiles from "../shouldFunctions/shouldCreateAdditionalFiles.js";
 import shouldUseArrowFunctions from "../shouldFunctions/shouldUseArrowFunctions.js";
 import chooseFramework from "../chooseFunctions/chooseFramework.js";
-import { chosenFramework } from "../index.js";
 import chooseFileExtensions from "../chooseFunctions/chooseFileExtensions.js";
 
 function writeMissingConfigFileOptions() {
@@ -15,10 +14,18 @@ function writeMissingConfigFileOptions() {
 
   let requiredOptions;
 
-  if (chosenFramework === "react") {
+  let chosenFramework;
+
+  if ("framework" in configFileContentObj) {
+    chosenFramework = configFileContentObj.framework;
+  } else {
+    chosenFramework = chooseFramework();
+  }
+
+  if (chosenFramework.toLowerCase() === "react") {
     requiredOptions = {
       componentsPath: chooseGeneratedComponentsDir,
-      framework: chooseFramework,
+      framework: chosenFramework,
       styleSheetLanguage: chooseStyleSheetLanguage,
       scriptingLanguage: chooseScriptingLanguage,
       useArrowFunctionComponents: shouldUseArrowFunctions,
@@ -28,14 +35,18 @@ function writeMissingConfigFileOptions() {
   } else {
     requiredOptions = {
       componentsPath: chooseGeneratedComponentsDir,
-      framework: chooseFramework,
+      framework: chosenFramework,
       fileExtensions: chooseFileExtensions,
     };
   }
 
   for (const option in requiredOptions) {
     if (!(option in configFileContentObj)) {
-      configFileContentObj[option] = requiredOptions[option]();
+      if (option === "framework") {
+        configFileContentObj[option] = requiredOptions[option];
+      } else {
+        configFileContentObj[option] = requiredOptions[option]();
+      }
     }
   }
 
