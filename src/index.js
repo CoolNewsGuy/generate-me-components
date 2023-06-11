@@ -61,7 +61,7 @@ function setOptionsFromConfigFile() {
   }
 }
 
-function askQuestionsForReactDevelopers() {
+function askQuestionsForJsxUsers() {
   chosenStyleSheetLanguage = chooseStyleSheetLanguage();
   chosenScriptingLanguage = chooseScriptingLanguage();
   doesUserPreferArrowFunctionComponents = shouldUseArrowFunctions();
@@ -88,7 +88,7 @@ if (
   doesUserUsesJsxFiles = checkIfJsxFilesAreUsed();
 
   if (doesUserUsesJsxFiles) {
-    askQuestionsForReactDevelopers();
+    askQuestionsForJsxUsers();
   } else {
     fileExtensions = chooseFileExtensions();
   }
