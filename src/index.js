@@ -21,6 +21,7 @@ import writeMissingConfigFileOptions from "./writeFunctions/writeMissingConfigFi
 import chooseFileExtensions from "./chooseFunctions/chooseFileExtensions.js";
 import checkIfJsxFilesAreUsed from "./checkFunctions/checkIfJsxFilesAreUsed.js";
 import capitalize from "./utils/capitalize.js";
+import shouldGenerateWithoutFolders from "./shouldFunctions/shouldGenerateWithoutFolders.js";
 
 console.log(
   chalk.yellow(
@@ -44,6 +45,7 @@ export let doesUserWantAdditionalFiles = null;
 export let additionalFilesExtensions = "none";
 export let fileExtensions = null; // for frameworks other than React
 export let isConfigFileAllowed = null;
+export let shouldGenrateComponentsFolders = null;
 export let componentsFolders = null;
 
 function setOptionsFromConfigFile() {
@@ -94,6 +96,8 @@ if (
   } else {
     fileExtensions = chooseFileExtensions();
   }
+
+  shouldGenrateComponentsFolders = shouldGenerateWithoutFolders();
 
   isConfigFileAllowed = shouldCreateConfigFile();
 
