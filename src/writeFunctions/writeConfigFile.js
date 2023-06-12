@@ -8,8 +8,8 @@ import {
   doesUserUsesJsxFiles,
   doesUserWantAdditionalFiles,
   fileExtensions,
+  shouldCreateComponentsFolders,
 } from "../index.js";
-import shouldGenerateWithoutFolders from "../shouldFunctions/shouldGenerateWithoutFolders.js";
 
 function writeConfigFile() {
   let optionsObj;
@@ -23,14 +23,14 @@ function writeConfigFile() {
       useArrowFunctionComponents: doesUserPreferArrowFunctionComponents,
       shouldCreateAdditionalFiles: doesUserWantAdditionalFiles,
       additionalFileExtensions: additionalFilesExtensions,
-      shouldCreateComponentsFolders: shouldGenerateWithoutFolders,
+      shouldCreateComponentsFolders: shouldCreateComponentsFolders,
     };
   } else {
     optionsObj = {
       componentsPath: componentsPath,
       areJsxFilesUsed: doesUserUsesJsxFiles,
       fileExtensions: fileExtensions,
-      shouldCreateComponentsFolders: shouldGenerateWithoutFolders,
+      shouldCreateComponentsFolders: shouldCreateComponentsFolders,
     };
   }
 
