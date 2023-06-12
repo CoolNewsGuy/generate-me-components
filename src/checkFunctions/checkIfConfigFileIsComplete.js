@@ -2,9 +2,9 @@ import readConfigFile from "../readFunctions/readConfigFile.js";
 
 function checkIfConfigFileIsComplete() {
   const fileContentObj = readConfigFile();
-  const requiredOptions = ["componentsPath", "framework"];
+  const requiredOptions = ["componentsPath", "areJsxFilesUsed"];
 
-  if (fileContentObj.framework === "react") {
+  if (fileContentObj.areJsxFilesUsed) {
     requiredOptions.push(
       "styleSheetLanguage",
       "scriptingLanguage",
