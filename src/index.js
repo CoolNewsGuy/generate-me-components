@@ -52,6 +52,7 @@ function setOptionsFromConfigFile() {
   const configFile = readConfigFile();
   componentsPath = configFile.componentsPath;
   doesUserUsesJsxFiles = configFile.areJsxFilesUsed;
+  shouldGenrateComponentsFolders = configFile.shouldCreateComponentsFolders;
 
   if (doesUserUsesJsxFiles) {
     chosenStyleSheetLanguage = configFile.styleSheetLanguage;
