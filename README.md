@@ -25,7 +25,7 @@ npx gmc [your-components-names]
 Example:
 
 ```bash
-npx gmc couter1 counter2
+npx gmc counter1 counter2
 ```
 
 This command will ask you the following questions:
