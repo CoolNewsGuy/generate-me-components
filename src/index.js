@@ -45,14 +45,14 @@ export let doesUserWantAdditionalFiles = null;
 export let additionalFilesExtensions = "none";
 export let fileExtensions = null; // for frameworks other than React
 export let isConfigFileAllowed = null;
-export let shouldGenrateComponentsFolders = null;
+export let shouldCreateComponentsFolders = null;
 export let componentsFolders = null;
 
 function setOptionsFromConfigFile() {
   const configFile = readConfigFile();
   componentsPath = configFile.componentsPath;
   doesUserUsesJsxFiles = configFile.areJsxFilesUsed;
-  shouldGenrateComponentsFolders = configFile.shouldCreateComponentsFolders;
+  shouldCreateComponentsFolders = configFile.shouldCreateComponentsFolders;
 
   if (doesUserUsesJsxFiles) {
     chosenStyleSheetLanguage = configFile.styleSheetLanguage;
@@ -98,7 +98,7 @@ if (
     fileExtensions = chooseFileExtensions();
   }
 
-  shouldGenrateComponentsFolders = shouldGenerateWithoutFolders();
+  shouldCreateComponentsFolders = shouldGenerateWithoutFolders();
 
   isConfigFileAllowed = shouldCreateConfigFile();
 
