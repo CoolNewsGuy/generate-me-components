@@ -8,6 +8,7 @@ import shouldCreateAdditionalFiles from "../shouldFunctions/shouldCreateAddition
 import shouldUseArrowFunctions from "../shouldFunctions/shouldUseArrowFunctions.js";
 import chooseFileExtensions from "../chooseFunctions/chooseFileExtensions.js";
 import checkIfJsxFilesAreUsed from "../checkFunctions/checkIfJsxFilesAreUsed.js";
+import shouldGenerateWithoutFolders from "../shouldFunctions/shouldGenerateWithoutFolders.js";
 
 function writeMissingConfigFileOptions() {
   const configFileContentObj = readConfigFile();
@@ -31,12 +32,14 @@ function writeMissingConfigFileOptions() {
       useArrowFunctionComponents: shouldUseArrowFunctions,
       shouldCreateAdditionalFiles: shouldCreateAdditionalFiles,
       additionalFileExtensions: chooseAdditionalFilesExtensions,
+      shouldCreateComponentsFolders: shouldGenerateWithoutFolders,
     };
   } else {
     requiredOptions = {
       componentsPath: chooseGeneratedComponentsDir,
       areJsxFilesUsed: doesUserUsesJsxFiles,
       fileExtensions: chooseFileExtensions,
+      shouldCreateComponentsFolders: shouldGenerateWithoutFolders,
     };
   }
 
