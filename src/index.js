@@ -6,7 +6,7 @@ import chooseStyleSheetLanguage from "./chooseFunctions/chooseStyleSheetLanguage
 import chooseScriptingLanguage from "./chooseFunctions/chooseScriptingLanguage.js";
 import createComponentFiles from "./createFunctions/createComponentFiles.js";
 import createConfigFileIfPermitted from "./createFunctions/createConfigFileIfPermitted.js";
-import { existsSync } from "fs";
+import { existsSync, mkdirSync } from "fs";
 import checkIfConfigFileIsComplete from "./checkFunctions/checkIfConfigFileIsComplete.js";
 import readConfigFile from "./readFunctions/readConfigFile.js";
 import figlet from "figlet";
@@ -105,11 +105,16 @@ if (
   createConfigFileIfPermitted();
 }
 
+mkdirSync(componentsPath, { recursive: true });
+
 if (process.argv.length > 2) {
   componentsFolders = process.argv.slice(2).map(capitalize);
 } else {
   componentsFolders = chooseComponentsNames();
 }
 
-createComponentsFolders();
+if (shouldCreateComponentsFolders) {
+  createComponentsFolders();
+}
+
 componentsFolders.forEach(createComponentFiles);
