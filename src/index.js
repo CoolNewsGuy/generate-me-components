@@ -68,12 +68,16 @@ function setOptionsFromConfigFile() {
 
 function askQuestionsForJsxUsers() {
   chosenStyleSheetLanguage = chooseStyleSheetLanguage();
+  console.log();
   chosenScriptingLanguage = chooseScriptingLanguage();
+  console.log();
   doesUserPreferArrowFunctionComponents = shouldUseArrowFunctions();
+  console.log();
   doesUserWantAdditionalFiles = shouldCreateAdditionalFiles();
-
+  console.log();
   if (doesUserWantAdditionalFiles) {
     additionalFilesExtensions = chooseAdditionalFilesExtensions();
+    console.log();
   }
 }
 
@@ -90,17 +94,23 @@ if (
   setOptionsFromConfigFile();
 } else {
   componentsPath = chooseGeneratedComponentsDir();
+  console.log();
   doesUserUsesJsxFiles = checkIfJsxFilesAreUsed();
+  console.log();
 
   if (doesUserUsesJsxFiles) {
     askQuestionsForJsxUsers();
   } else {
     fileExtensions = chooseFileExtensions();
+    console.log();
   }
 
   shouldCreateComponentsFolders = shouldGenerateWithoutFolders();
+  console.log();
 
   isConfigFileAllowed = shouldCreateConfigFile();
+
+  console.log();
 
   createConfigFileIfPermitted();
 }
