@@ -4,7 +4,7 @@ import { colorizeText, input } from "../index.js";
 function chooseFileExtensions() {
   const filesExtensions = input(
     colorizeText(
-      "Specifiy files extensions (e.g., vue, test.js...) | default = none: "
+      "* Specifiy files extensions (e.g., vue, test.js...) | default = none: "
     ),
     "none"
   ).trim();

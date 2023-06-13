@@ -2,9 +2,7 @@ import { colorizeText, input } from "../index.js";
 
 function shouldUseArrowFunctions() {
   const shouldUseArrowSyntax = input(
-    colorizeText(
-      "Would you like to use arrow function components (y/n) default = no: "
-    ),
+    colorizeText("* Use arrow function components (y/N): "),
     "no"
   ).trim();
 

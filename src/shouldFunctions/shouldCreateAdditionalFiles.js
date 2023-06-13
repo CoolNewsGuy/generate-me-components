@@ -2,9 +2,7 @@ import { colorizeText, input } from "../index.js";
 
 function shouldCreateAdditionalFiles() {
   const shouldIncludeAdditionalFiles = input(
-    colorizeText(
-      "Would you like to include additional component files (y/n) | default = no: "
-    ),
+    colorizeText("* Include additional component files (y/N): "),
     "no"
   ).trim();
 

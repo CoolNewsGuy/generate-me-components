@@ -3,7 +3,7 @@ import { colorizeText, input } from "../index.js";
 function shouldGenerateWithoutFolders() {
   const shouldCreateFolders = input(
     colorizeText(
-      "Generate components files directly without folders (y/n) | default = no: "
+      "* Generate components files directly without folders (y/N): "
     ),
     "no"
   ).trim();
