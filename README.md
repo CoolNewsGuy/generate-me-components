@@ -40,12 +40,14 @@ Then if you're using JSX/TSX file extensions, it will ask you:
 3. If arrow function components are preferred.
 4. If you want to include additional files.
 5. Additional files' extension (e.g., test.js...).
-6. Components' Names (if not specified in CLI arguments).
+6. If you want to create component's files directly without folders.
+7. Components' Names (if not specified in CLI arguments).
 
 Otherwise, it will just ask you:
 
 1. Extensions of Component's files (e.g., vue, svelte...).
-2. Components' Names (if not specified in CLI arguments).
+2. If you want to create component's files directly without folders.
+3. Components' Names (if not specified in CLI arguments).
 
 For example: if you enter: vue ts js, it will create 3 files with the same name but different file extensions.
 
