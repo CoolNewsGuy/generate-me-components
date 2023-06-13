@@ -1,4 +1,4 @@
-import { writeFileSync } from "fs";
+import { writeFileSync, existsSync } from "fs";
 import {
   additionalFilesExtensions,
   chosenScriptingLanguage,
@@ -8,6 +8,7 @@ import {
   doesUserWantAdditionalFiles,
   fileExtensions,
   rootDir,
+  shouldCreateComponentsFolders,
 } from "../index.js";
 import createScriptFileBoilerplate from "./createScriptFileBoilerplate.js";
 
@@ -35,7 +36,11 @@ function createComponentFiles(componentFolderName) {
     }
   }
 
-  process.chdir(componentFolderPath);
+  if (existsSync(componentFolderPath)) {
+    process.chdir(componentFolderPath);
+  } else {
+    process.chdir(componentsPath);
+  }
 
   componentFiles.forEach((file, index) => {
     // fill the jsx or tsx file with some boilerplate
