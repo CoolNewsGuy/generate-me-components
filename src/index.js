@@ -35,7 +35,7 @@ console.log(
 export const input = create();
 export const rootDir = process.cwd();
 export const colorizeText = chalk.rgb(0, 255, 0);
-export const colorizeValues = chalk.rgb(0, 255, 255);
+export const colorizeValues = chalk.rgb(0, 190, 250);
 
 export let componentsPath = null;
 export let doesUserUsesJsxFiles = null;
