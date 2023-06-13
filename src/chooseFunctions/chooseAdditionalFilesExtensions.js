@@ -1,10 +1,10 @@
-import { colorizeText, input } from "../index.js";
+import { colorizeValues, colorizeText, input } from "../index.js";
 
 function chooseAdditionalFilesExtensions() {
   const additionalFilesExtensions = input(
-    colorizeText(
-      "* Specifiy additional files extensions (e.g., test.js...) | default = none: "
-    ),
+    `${colorizeText(
+      "* Specifiy additional files extensions (e.g., test.js...)"
+    )} ${colorizeValues("(none) : ")}`,
     "none"
   ).trim();
 

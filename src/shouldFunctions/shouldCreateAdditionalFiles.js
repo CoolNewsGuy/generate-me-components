@@ -1,8 +1,10 @@
-import { colorizeText, input } from "../index.js";
+import { colorizeValues, colorizeText, input } from "../index.js";
 
 function shouldCreateAdditionalFiles() {
   const shouldIncludeAdditionalFiles = input(
-    colorizeText("* Include additional component files (y/N): "),
+    `${colorizeText("* Include additional component files")} ${colorizeValues(
+      "(y/N) : "
+    )}`,
     "no"
   ).trim();
 

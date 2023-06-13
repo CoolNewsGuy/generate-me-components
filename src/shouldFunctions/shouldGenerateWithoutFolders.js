@@ -1,10 +1,10 @@
-import { colorizeText, input } from "../index.js";
+import { colorizeValues, colorizeText, input } from "../index.js";
 
 function shouldGenerateWithoutFolders() {
   const shouldCreateFolders = input(
-    colorizeText(
-      "* Generate components files directly without folders (y/N): "
-    ),
+    `${colorizeText(
+      "* Generate components files directly without folders"
+    )} ${colorizeValues("(y/N) : ")}`,
     "no"
   ).trim();
 

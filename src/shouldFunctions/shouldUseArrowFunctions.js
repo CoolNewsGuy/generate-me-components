@@ -1,8 +1,10 @@
-import { colorizeText, input } from "../index.js";
+import { colorizeValues, colorizeText, input } from "../index.js";
 
 function shouldUseArrowFunctions() {
   const shouldUseArrowSyntax = input(
-    colorizeText("* Use arrow function components (y/N): "),
+    `${colorizeText("* Use arrow function components")} ${colorizeValues(
+      "(y/N) : "
+    )}`,
     "no"
   ).trim();
 

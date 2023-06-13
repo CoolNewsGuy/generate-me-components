@@ -1,9 +1,11 @@
-import { colorizeText, input } from "../index.js";
+import { colorizeValues, colorizeText, input } from "../index.js";
 
 function chooseGeneratedComponentsDir() {
   const currentDir = process.cwd();
   let componentsFolder = input(
-    colorizeText("* Generated components's path (src/components): "),
+    `${colorizeText("* Generated components's path")} ${colorizeValues(
+      "(src/components) : "
+    )}`,
     "src/components"
   ).trim();
 

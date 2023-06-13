@@ -1,8 +1,10 @@
-import { colorizeText, input } from "../index.js";
+import { colorizeValues, colorizeText, input } from "../index.js";
 
 function chooseScriptingLanguage() {
   const language = input(
-    colorizeText("* Scripting language (JSX and TSX only) | default = JSX: "),
+    `${colorizeText(
+      "* Scripting language (JSX and TSX only)"
+    )} ${colorizeValues("(JSX) : ")}`,
     "JSX"
   ).trim();
 

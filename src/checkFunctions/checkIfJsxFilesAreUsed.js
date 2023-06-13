@@ -1,8 +1,10 @@
-import { colorizeText, input } from "../index.js";
+import { colorizeValues, colorizeText, input } from "../index.js";
 
 function checkIfJsxFilesAreUsed() {
   const areJsxFilesUsed = input(
-    colorizeText("* Using JSX/TSX file extension (Y/n): "),
+    `${colorizeText("* Using JSX/TSX file extension")} ${colorizeValues(
+      "(Y/n) : "
+    )}`,
     "yes"
   ).trim();
 

@@ -1,10 +1,10 @@
-import { colorizeText, input } from "../index.js";
+import { colorizeValues, colorizeText, input } from "../index.js";
 
 function chooseStyleSheetLanguage() {
   const language = input(
-    colorizeText(
-      "* StyleSheet Language (e.g., css, sass, scss, module.css...) | default = none: "
-    ),
+    `${colorizeText(
+      "* StyleSheet Language (e.g., css, sass, scss, module.css...)"
+    )} ${colorizeValues("(none) : ")}`,
     "none"
   ).trim();
 
